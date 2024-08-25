@@ -1,0 +1,34 @@
+.button-class {
+	border: 1px solid black;
+}
+
+.border-radius-button {
+	border-radius: 0.60rem;
+}
+
+.sm-button-round {
+	padding: 0.75rem 0.75rem;
+}
+
+.md-button-round {
+	padding: 1.5rem 1.5rem;
+}
+
+.lg-button-round {
+	padding: 2.25rem 2.25rem;
+}
+
+.sm-button {
+	padding: 0.5rem 0.75rem;
+	font-size: 0.75em;
+}
+
+.md-button {
+	padding: 0.75rem 2rem;
+	font-size: 1em;
+}
+
+.lg-button {
+	padding: 2rem 2.25rem;
+	font-size: 1.3em;
+}

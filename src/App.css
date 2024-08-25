@@ -1,0 +1,21 @@
+:root {
+	--primary-clr: blue;
+	--secondary-clr: blue;
+	--success-clr: blue;
+	--warning-clr: blue;
+}
+
+.primary-color {
+	background-color: blue;
+	color: white;
+}
+
+.secondary-color {}
+
+.success-color {}
+
+.warning-color {}
+
+.border-round {
+	border-radius: 50%;
+}

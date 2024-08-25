@@ -1,7 +1,6 @@
 import './App.css'
 import { CartIcon } from './components/Cart/CartIcon'
 import { ItemCard } from './components/ItemCard/ItemCard'
-import { Button } from './components/Shared/Button'
 
 function App() {
 
@@ -9,7 +8,6 @@ function App() {
     <>
       <CartIcon />
       <ItemCard />
-      <Button />
     </>
   )
 }

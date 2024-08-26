@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ItemsMain } from "../../components/ItemsContainer/ItemsMain";
+import { fetchProducts } from "../../helperFunctions/fetchProducts";
 
 export const Route = createFileRoute("/kids/clothing")({
   component: ClothingPage,
@@ -19,15 +20,22 @@ export const Route = createFileRoute("/kids/clothing")({
     }
 
     return { page: validatedPage, sort: validatedSort, filter: "none" }
-  }
+  },
+  loaderDeps: ({ search: { page } }) => ({ page: Number(page) }),
+  loader: ({ deps: { page } }) => (fetchProducts(page, "kids"))
 })
 
 function ClothingPage() {
-  const { page, sort, filter } = Route.useSearch()
-  console.log(page, sort, filter);
+  const data = Route.useLoaderData();
+  if (!data) {
+    return (
+      <div>not found</div>
+    )
+  }
+
   return (
     <div>
-      <ItemsMain />
+      <ItemsMain data={data} />
     </div>
   )
 }

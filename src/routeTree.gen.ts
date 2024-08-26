@@ -14,10 +14,13 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as CartImport } from './routes/cart'
 import { Route as IndexImport } from './routes/index'
 import { Route as WomenClothingImport } from './routes/women/clothing'
+import { Route as WomenProductIdImport } from './routes/women/$productId'
 import { Route as TechnologyProductsImport } from './routes/technology/products'
-import { Route as ProductsProductIdImport } from './routes/products/$productId'
+import { Route as TechnologyProductIdImport } from './routes/technology/$productId'
 import { Route as MenClothingImport } from './routes/men/clothing'
+import { Route as MenProductIdImport } from './routes/men/$productId'
 import { Route as KidsClothingImport } from './routes/kids/clothing'
+import { Route as KidsProductIdImport } from './routes/kids/$productId'
 
 // Create/Update Routes
 
@@ -36,13 +39,18 @@ const WomenClothingRoute = WomenClothingImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const WomenProductIdRoute = WomenProductIdImport.update({
+  path: '/women/$productId',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const TechnologyProductsRoute = TechnologyProductsImport.update({
   path: '/technology/products',
   getParentRoute: () => rootRoute,
 } as any)
 
-const ProductsProductIdRoute = ProductsProductIdImport.update({
-  path: '/products/$productId',
+const TechnologyProductIdRoute = TechnologyProductIdImport.update({
+  path: '/technology/$productId',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -51,8 +59,18 @@ const MenClothingRoute = MenClothingImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const MenProductIdRoute = MenProductIdImport.update({
+  path: '/men/$productId',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const KidsClothingRoute = KidsClothingImport.update({
   path: '/kids/clothing',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const KidsProductIdRoute = KidsProductIdImport.update({
+  path: '/kids/$productId',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -74,11 +92,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CartImport
       parentRoute: typeof rootRoute
     }
+    '/kids/$productId': {
+      id: '/kids/$productId'
+      path: '/kids/$productId'
+      fullPath: '/kids/$productId'
+      preLoaderRoute: typeof KidsProductIdImport
+      parentRoute: typeof rootRoute
+    }
     '/kids/clothing': {
       id: '/kids/clothing'
       path: '/kids/clothing'
       fullPath: '/kids/clothing'
       preLoaderRoute: typeof KidsClothingImport
+      parentRoute: typeof rootRoute
+    }
+    '/men/$productId': {
+      id: '/men/$productId'
+      path: '/men/$productId'
+      fullPath: '/men/$productId'
+      preLoaderRoute: typeof MenProductIdImport
       parentRoute: typeof rootRoute
     }
     '/men/clothing': {
@@ -88,11 +120,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MenClothingImport
       parentRoute: typeof rootRoute
     }
-    '/products/$productId': {
-      id: '/products/$productId'
-      path: '/products/$productId'
-      fullPath: '/products/$productId'
-      preLoaderRoute: typeof ProductsProductIdImport
+    '/technology/$productId': {
+      id: '/technology/$productId'
+      path: '/technology/$productId'
+      fullPath: '/technology/$productId'
+      preLoaderRoute: typeof TechnologyProductIdImport
       parentRoute: typeof rootRoute
     }
     '/technology/products': {
@@ -100,6 +132,13 @@ declare module '@tanstack/react-router' {
       path: '/technology/products'
       fullPath: '/technology/products'
       preLoaderRoute: typeof TechnologyProductsImport
+      parentRoute: typeof rootRoute
+    }
+    '/women/$productId': {
+      id: '/women/$productId'
+      path: '/women/$productId'
+      fullPath: '/women/$productId'
+      preLoaderRoute: typeof WomenProductIdImport
       parentRoute: typeof rootRoute
     }
     '/women/clothing': {
@@ -117,10 +156,13 @@ declare module '@tanstack/react-router' {
 export const routeTree = rootRoute.addChildren({
   IndexRoute,
   CartRoute,
+  KidsProductIdRoute,
   KidsClothingRoute,
+  MenProductIdRoute,
   MenClothingRoute,
-  ProductsProductIdRoute,
+  TechnologyProductIdRoute,
   TechnologyProductsRoute,
+  WomenProductIdRoute,
   WomenClothingRoute,
 })
 
@@ -134,10 +176,13 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/",
         "/cart",
+        "/kids/$productId",
         "/kids/clothing",
+        "/men/$productId",
         "/men/clothing",
-        "/products/$productId",
+        "/technology/$productId",
         "/technology/products",
+        "/women/$productId",
         "/women/clothing"
       ]
     },
@@ -147,17 +192,26 @@ export const routeTree = rootRoute.addChildren({
     "/cart": {
       "filePath": "cart.tsx"
     },
+    "/kids/$productId": {
+      "filePath": "kids/$productId.tsx"
+    },
     "/kids/clothing": {
       "filePath": "kids/clothing.tsx"
+    },
+    "/men/$productId": {
+      "filePath": "men/$productId.tsx"
     },
     "/men/clothing": {
       "filePath": "men/clothing.tsx"
     },
-    "/products/$productId": {
-      "filePath": "products/$productId.tsx"
+    "/technology/$productId": {
+      "filePath": "technology/$productId.tsx"
     },
     "/technology/products": {
       "filePath": "technology/products.tsx"
+    },
+    "/women/$productId": {
+      "filePath": "women/$productId.tsx"
     },
     "/women/clothing": {
       "filePath": "women/clothing.tsx"

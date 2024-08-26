@@ -1,13 +1,12 @@
 import './App.css'
-import { CartIcon } from './components/Cart/CartIcon'
-import { ItemCard } from './components/ItemCard/ItemCard'
+import { ItemsCarousel } from './components/ItemsCarousel/ItemCarousel'
+import { Navbar } from './components/Navbar/Navbar'
 
 function App() {
 
   return (
     <>
-      <CartIcon />
-      <ItemCard />
+      <Navbar />
     </>
   )
 }

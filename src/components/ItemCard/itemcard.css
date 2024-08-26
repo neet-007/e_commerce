@@ -1,14 +1,15 @@
 .item-card-container {
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: 1fr 1fr;
 	gap: 1rem;
+	border: 1px solid black;
+	padding: 1rem;
 	grid-template-areas:
-		"item-card-title"
-		"item-card-img"
-		"item-card-img"
-		"item-card-options"
-		"item-card-description"
-		"item-card-footer";
+		"item-card-title item-card-description"
+		"item-card-img item-card-description"
+		"item-card-img item-card-description"
+		"item-card-options item-card-description"
+		"item-card-footer item-card-footer";
 }
 
 .item-card-title {
@@ -20,6 +21,7 @@
 
 .item-card-img {
 	grid-area: item-card-img;
+	max-height: 11rem;
 }
 
 .item-card-options {
@@ -63,4 +65,18 @@
 
 .item-card-footer-item {
 	flex-basis: 100%;
+}
+
+
+@media only screen and (min-width: 774px) {
+	.item-card-container {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			"item-card-title"
+			"item-card-img"
+			"item-card-img"
+			"item-card-options"
+			"item-card-description"
+			"item-card-footer";
+	}
 }

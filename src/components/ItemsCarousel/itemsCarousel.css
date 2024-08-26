@@ -1,0 +1,46 @@
+.items-carousel-container {}
+
+.items-carousel-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.items-carousel-control {
+	display: flex;
+	gap: 1rem;
+}
+
+.items-carousel-control-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 2rem;
+	width: 2rem;
+	padding: 1.2rem;
+	background-color: lightgray;
+	border: 1px solid black;
+	border-radius: 50%;
+	font-size: 1.2em;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.items-carousel-items {
+	display: flex;
+	gap: 1rem;
+}
+
+.items-carousel-item-card-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.items-carousel-item-card-img {
+	max-width: 20rem;
+	height: auto;
+}
+
+.items-carousel-item-card-container {}
+
+.items-carousel-item-card-container {}

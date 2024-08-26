@@ -13,12 +13,118 @@
 
 .cart-icon-count {
 	position: absolute;
-	border: 1px solid black;
-	border-radius: 50%;
-	bottom: 0;
-	right: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -30%);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 0.2rem 0.4rem;
+	font-weight: bold;
+	font-size: 1.4em;
+}
+
+.cart-bag {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	grid-area: cart-bag;
+}
+
+.cart-bag-items {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.cart-card-item-container {
+	display: flex;
+	padding: 1rem;
+	gap: 1rem;
+}
+
+.cart-card-item-img {
+	flex-basis: 20%;
+	max-width: 20%;
+	height: auto;
+}
+
+.cart-card-item-content {
+	flex-basis: 80%;
+}
+
+.cart-card-item-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.cart-card-item-title {
+	grid-area: cart-card-item-title;
+}
+
+.cart-card-item-price {
+	grid-area: cart-card-item-price;
+}
+
+.cart-card-item-details {
+	grid-area: cart-card-item-details;
+}
+
+.cart-card-item-options {
+	grid-area: cart-card-item-options;
+}
+
+.cart-container {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-areas:
+		"cart-bag"
+		"cart-summery"
+	;
+}
+
+.cart-card-item-option {}
+
+.cart-summery {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	grid-area: cart-summery;
+}
+
+.cart-summery-total {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 0;
+	border-bottom: 1px solid black;
+}
+
+.cart-summery-promo {
+	display: flex;
+	flex-direction: column;
+}
+
+.cart-summery-promo input {
+	padding: 1rem;
+}
+
+.cart-summery-button {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+@media only screen and (min-width: 1000px) {
+	.cart-container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas:
+			"cart-bag cart-summery";
+	}
+
+	.cart-summery-button {
+		position: relative;
+	}
 }

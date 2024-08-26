@@ -12,9 +12,7 @@ export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({ ...p
 			<div className="item-card-title">
 				Title
 			</div>
-			<div className="item-card-img">
-				img
-			</div>
+			<img className="item-card-img" src="src/assets/head_phone_black.jpg" />
 			<div className="item-card-options">
 				<div className="item-card-option">
 					<button className="item-card-option-selector">
@@ -60,7 +58,8 @@ export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({ ...p
 			</div>
 			<div className="item-card-footer">
 				<div className="item-card-footer-item">
-					price
+					<span>16</span>
+					<span>SAR</span>
 				</div>
 				<Button variant="primary"
 					size="md"

@@ -11,7 +11,7 @@ export const ItemsCarousel: React.FC<ComponentProps<"div"> & ItemsCarouselProps>
 		<div className="items-carousel-container" {...props}>
 			<div className="items-carousel-header">
 				<div className="items-carousel-title">
-					titel &#xF179;
+					titel
 				</div>
 				<div className="items-carousel-control">
 					<button className="items-carousel-control-icon">

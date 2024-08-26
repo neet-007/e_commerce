@@ -11,12 +11,48 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as CartImport } from './routes/cart'
 import { Route as IndexImport } from './routes/index'
+import { Route as WomenClothingImport } from './routes/women/clothing'
+import { Route as TechnologyProductsImport } from './routes/technology/products'
+import { Route as ProductsProductIdImport } from './routes/products/$productId'
+import { Route as MenClothingImport } from './routes/men/clothing'
+import { Route as KidsClothingImport } from './routes/kids/clothing'
 
 // Create/Update Routes
 
+const CartRoute = CartImport.update({
+  path: '/cart',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const IndexRoute = IndexImport.update({
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const WomenClothingRoute = WomenClothingImport.update({
+  path: '/women/clothing',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const TechnologyProductsRoute = TechnologyProductsImport.update({
+  path: '/technology/products',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ProductsProductIdRoute = ProductsProductIdImport.update({
+  path: '/products/$productId',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MenClothingRoute = MenClothingImport.update({
+  path: '/men/clothing',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const KidsClothingRoute = KidsClothingImport.update({
+  path: '/kids/clothing',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -31,12 +67,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartImport
+      parentRoute: typeof rootRoute
+    }
+    '/kids/clothing': {
+      id: '/kids/clothing'
+      path: '/kids/clothing'
+      fullPath: '/kids/clothing'
+      preLoaderRoute: typeof KidsClothingImport
+      parentRoute: typeof rootRoute
+    }
+    '/men/clothing': {
+      id: '/men/clothing'
+      path: '/men/clothing'
+      fullPath: '/men/clothing'
+      preLoaderRoute: typeof MenClothingImport
+      parentRoute: typeof rootRoute
+    }
+    '/products/$productId': {
+      id: '/products/$productId'
+      path: '/products/$productId'
+      fullPath: '/products/$productId'
+      preLoaderRoute: typeof ProductsProductIdImport
+      parentRoute: typeof rootRoute
+    }
+    '/technology/products': {
+      id: '/technology/products'
+      path: '/technology/products'
+      fullPath: '/technology/products'
+      preLoaderRoute: typeof TechnologyProductsImport
+      parentRoute: typeof rootRoute
+    }
+    '/women/clothing': {
+      id: '/women/clothing'
+      path: '/women/clothing'
+      fullPath: '/women/clothing'
+      preLoaderRoute: typeof WomenClothingImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren({ IndexRoute })
+export const routeTree = rootRoute.addChildren({
+  IndexRoute,
+  CartRoute,
+  KidsClothingRoute,
+  MenClothingRoute,
+  ProductsProductIdRoute,
+  TechnologyProductsRoute,
+  WomenClothingRoute,
+})
 
 /* prettier-ignore-end */
 
@@ -46,11 +132,35 @@ export const routeTree = rootRoute.addChildren({ IndexRoute })
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/"
+        "/",
+        "/cart",
+        "/kids/clothing",
+        "/men/clothing",
+        "/products/$productId",
+        "/technology/products",
+        "/women/clothing"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/cart": {
+      "filePath": "cart.tsx"
+    },
+    "/kids/clothing": {
+      "filePath": "kids/clothing.tsx"
+    },
+    "/men/clothing": {
+      "filePath": "men/clothing.tsx"
+    },
+    "/products/$productId": {
+      "filePath": "products/$productId.tsx"
+    },
+    "/technology/products": {
+      "filePath": "technology/products.tsx"
+    },
+    "/women/clothing": {
+      "filePath": "women/clothing.tsx"
     }
   }
 }

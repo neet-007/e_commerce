@@ -8,7 +8,7 @@ export const CartItemCard: React.FC<ComponentProps<"div"> & CartItemCardProps> =
 
   return (
     <div className="cart-card-item-container" {...props}>
-      <img className="cart-card-item-img" src="src/assets/head_phone_black.jpg" />
+      <img className="cart-card-item-img" src="/head_phone_black.jpg" />
       <div className="cart-card-item-content">
         <div className="cart-card-item-header">
           <div className="cart-card-item-price">

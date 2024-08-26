@@ -4,10 +4,11 @@ import './cart.css'
 type CartIconProps = {}
 
 
-export const CartIcon: React.FC<ComponentProps<"button"> & CartIconProps> = ({ ...props }) => {
+export const CartIcon: React.FC<ComponentProps<"button"> & CartIconProps> = ({ className,
+  ...props }) => {
 
   return (
-    <button className="cart-icon-container" {...props}>
+    <button className={`cart-icon-container ${className}`} {...props}>
       <div className="cart-icon-icon">
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -6,6 +6,15 @@
 	align-items: center;
 }
 
+.link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.link-active {
+	font-weight: bold;
+}
+
 .nav-bar-ul {
 	display: none;
 	gap: 1rem;

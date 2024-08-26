@@ -9,7 +9,7 @@ export const ItemsCarouselItemCard: React.FC<ComponentProps<"div"> & ItemsCarous
 	return (
 		<div className="items-carousel-item-card-container" {...props}>
 			<img className="items-carousel-item-card-img"
-				src="src/assets/head_phone_black.jpg" alt="" />
+				src="/head_phone_black.jpg" alt="" />
 			<div className="itmes-carousel-item-card-title">
 				titel
 			</div>

@@ -1,6 +1,6 @@
 import { ItemCardProps } from "../components/ItemCard/ItemCard";
 
-type ApiResponse = ItemCardProps;
+type ApiResponse = ItemCardProps[];
 
 type ReturnType = ItemCardProps | null;
 
@@ -8,30 +8,31 @@ export async function fetchProduct(
   id: number,
   category: "men" | "women" | "kids" | "technology"
 ): Promise<ReturnType> {
-  let res: Response;
+  let data: ApiResponse | null = null;
 
+  // Use dynamic imports for local JSON files
   switch (category) {
     case "men":
-      res = await fetch(`/api/menProducts/${id}.json`);
+      data = (await import(`../api/menProducts.json`)).default;
       break;
     case "women":
-      res = await fetch(`/api/womenProducts/${id}.json`);
+      data = (await import(`../api/womenProducts.json`)).default;
       break;
     case "kids":
-      res = await fetch(`/api/kidsProducts/${id}.json`);
+      data = (await import(`../api/kidsProducts.json`)).default;
       break;
     case "technology":
-      res = await fetch(`/api/technologyProducts/${id}.json`);
+      data = (await import(`../api/technologyProducts.json`)).default;
       break;
     default:
       throw new Error(`Unknown category: ${category}`);
   }
 
-  if (!res.ok) {
-    throw new Error(`Failed to fetch: ${res.statusText}`);
+  // Return the data or null if not found
+  
+  const item = data.filter(s => s.itemId === id)
+  if (item.length === 0){
+    return null;
   }
-
-  const data: ApiResponse = await res.json();
-
-  return data || null
+  return item[0];
 }

@@ -1,9 +1,5 @@
 import { ItemCardProps } from "../components/ItemCard/ItemCard";
 
-type ApiResponse = {
-  items: ItemCardProps[]; // API response contains an array of products
-};
-
 type ReturnType = {
   results: ItemCardProps[]; // Paginated results
   page: number;            // Current page number
@@ -13,42 +9,34 @@ export async function fetchProducts(
   page: number,
   category: "men" | "women" | "kids" | "technology"
 ): Promise<ReturnType> {
-  let res: Response;
+  let data;
 
-  // Fetch the products based on the category
+  // Use dynamic imports for local JSON files
   switch (category) {
     case "men":
-      res = await fetch("/api/menProducts.json");
+      data = (await import("../api/menProducts.json")).default;
       break;
     case "women":
-      res = await fetch("/api/womenProducts.json");
+      data = (await import("../api/womenProducts.json")).default;
       break;
     case "kids":
-      res = await fetch("/api/kidsProducts.json");
+      data = (await import("../api/kidsProducts.json")).default;
       break;
     case "technology":
-      res = await fetch("/api/technologyProducts.json");
+      data = (await import("../api/technologyProducts.json")).default;
       break;
     default:
       throw new Error(`Unknown category: ${category}`);
   }
 
-  // Check if the response is OK
-  if (!res.ok) {
-    throw new Error(`Failed to fetch: ${res.statusText}`);
-  }
-
-  // Parse the JSON response
-  const data: ApiResponse = await res.json();
-
   // Calculate pagination parameters
   const itemsPerPage = 20; // Number of items per page
   const skip = page * itemsPerPage; // Calculate how many items to skip
-  const paginatedResults = data.items.slice(skip, skip + itemsPerPage);
+  const paginatedResults = data.slice(skip, skip + itemsPerPage);
 
   // Return the paginated results and current page
   return {
     results: paginatedResults,
-    page
+    page,
   };
 }

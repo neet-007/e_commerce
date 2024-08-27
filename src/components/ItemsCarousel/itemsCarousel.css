@@ -46,6 +46,7 @@
 .items-carousel-item-card-img {
 	max-width: 20rem;
 	height: auto;
+	cursor: pointer;
 }
 
 .items-carousel-item-card-container {}

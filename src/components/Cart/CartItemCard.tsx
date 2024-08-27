@@ -1,6 +1,7 @@
 import React, { ComponentProps } from "react";
 import "./cart.css"
-import { CartItemType } from "../../context/cartContext";
+import { CartItemType, useCartContext } from "../../context/cartContext";
+import { useNavigate } from "@tanstack/react-router";
 
 type CartItemCardProps = {
   item: CartItemType
@@ -10,9 +11,17 @@ type CartItemCardProps = {
 export const CartItemCard: React.FC<ComponentProps<"div"> & CartItemCardProps> = ({ item,
   ...props }) => {
 
+  const { removeSingleItem, removeItem } = useCartContext();
+  const navigate = useNavigate();
+
   return (
     <div className="cart-card-item-container" {...props}>
-      <img className="cart-card-item-img" src="/head_phone_black.jpg" />
+      <img className="cart-card-item-img" src="/head_phone_black.jpg"
+        onClick={() => navigate({
+          to: `/men/$productId`,
+          params: { productId: String(item.item.itemId) }
+        })}
+      />
       <div className="cart-card-item-content">
         <div className="cart-card-item-header">
           <div className="cart-card-item-price">
@@ -27,8 +36,14 @@ export const CartItemCard: React.FC<ComponentProps<"div"> & CartItemCardProps> =
           {item.item.description}
         </div>
         <div className="cart-card-item-options">
-          <div className="cart-card-item-option">like</div>
-          <div className="cart-card-item-option">delete</div>
+          <button className="cart-card-item-option"
+            onClick={() => removeSingleItem(item.item.itemId)}>
+            delete
+          </button>
+          <button className="cart-card-item-option"
+            onClick={() => removeItem(item.item.itemId)}>
+            delete all items
+          </button>
         </div>
       </div>
     </div>

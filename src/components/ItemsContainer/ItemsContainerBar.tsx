@@ -8,12 +8,12 @@ export const ItemsContainerBar: React.FC<ComponentProps<"div"> & ItemsContainerB
 
 	return (
 		<div className="items-container-bar" {...props}>
-			<div>
+			<button className="button-none">
 				results
-			</div>
-			<div>
+			</button>
+			<button className="button-none">
 				filters
-			</div>
+			</button>
 		</div>
 	)
 

@@ -19,17 +19,21 @@ export const ItemsCarousel: React.FC<ComponentProps<"div"> & ItemsCarouselProps>
 
 	function move(dir: "l" | "r") {
 		if (!containerRef.current) {
-			return
+			return;
 		}
 
 		if (dir === "r") {
-			containerRef.current.style.transform = `translateX(-${33 * sliderIndex}%)`;
-			setSliderIndex(prev => Math.min(prev + 1, items.length));
-			return
-		}
-		if (dir === "l") {
-			containerRef.current.style.transform = `translateX(${33 * (items.length - sliderIndex)}%)`;
-			setSliderIndex(prev => Math.max(prev - 1, 0));
+			setSliderIndex(prev => {
+				const newIndex = Math.min(prev + 1, items.length - 1);
+				containerRef.current!.style.transform = `translateX(-${33 * newIndex}%)`;
+				return newIndex;
+			});
+		} else if (dir === "l") {
+			setSliderIndex(prev => {
+				const newIndex = Math.max(prev - 1, 0);
+				containerRef.current!.style.transform = `translateX(-${33 * newIndex}%)`;
+				return newIndex;
+			});
 		}
 	}
 
@@ -46,7 +50,7 @@ export const ItemsCarousel: React.FC<ComponentProps<"div"> & ItemsCarouselProps>
 						{"<"}
 					</button>
 					<button className="items-carousel-control-icon"
-						disabled={sliderIndex >= items.length}
+						disabled={items.length - (sliderIndex + 1) < 3}
 						onClick={() => move("r")}>
 						{">"}
 					</button>

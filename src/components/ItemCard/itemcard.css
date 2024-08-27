@@ -22,6 +22,7 @@
 .item-card-img {
 	grid-area: item-card-img;
 	max-height: 11rem;
+	cursor: pointer;
 }
 
 .item-card-options {

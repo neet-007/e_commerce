@@ -2,7 +2,7 @@ import { ItemType } from "../components/ItemCard/ItemCard";
 
 type ApiResponse = ItemType[];
 
-type ReturnType = ItemType | null;
+type ReturnType = { results: ItemType, carousel: ItemType[] } | null;
 
 export async function fetchProduct(
 	id: number,
@@ -10,7 +10,6 @@ export async function fetchProduct(
 ): Promise<ReturnType> {
 	let data: ApiResponse | null = null;
 
-	// Use dynamic imports for local JSON files
 	switch (category) {
 		case "men":
 			data = (await import(`../api/menProducts.json`)).default;
@@ -28,11 +27,16 @@ export async function fetchProduct(
 			throw new Error(`Unknown category: ${category}`);
 	}
 
-	// Return the data or null if not found
 
 	const item = data.filter(s => s.itemId === id)
 	if (item.length === 0) {
 		return null;
 	}
-	return item[0];
+
+	const carousel = data.length >= 12 ? data.slice(0, 12) : data.length >= 6 ? data.slice(0, 6) : [];
+
+	return {
+		results: item[0],
+		carousel
+	};
 }

@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ItemCard } from "../../components/ItemCard/ItemCard"
 import { ItemsCarousel } from "../../components/ItemsCarousel/ItemCarousel";
 import { fetchProduct } from "../../helperFunctions/fetchProduct";
+import { PageItemCard } from "../../components/ItemCard/PageItemCard";
 
 
 export const Route = createFileRoute("/women/$productId")({
@@ -19,7 +19,7 @@ function ProductPage() {
 
   return (
     <div className="flex f-d-column gap-2">
-      <ItemCard item={data} />
+      <PageItemCard item={data.results} />
       <ItemsCarousel />
     </div>
   )

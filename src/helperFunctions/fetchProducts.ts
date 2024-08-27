@@ -1,8 +1,9 @@
 import { ItemType } from "../components/ItemCard/ItemCard";
 
 type ReturnType = {
-  results: ItemType[]; // Paginated results
-  page: number;            // Current page number
+  results: ItemType[];
+  page: number;
+  carousel: ItemType[];
 };
 
 export async function fetchProducts(
@@ -29,14 +30,14 @@ export async function fetchProducts(
       throw new Error(`Unknown category: ${category}`);
   }
 
-  // Calculate pagination parameters
-  const itemsPerPage = 20; // Number of items per page
-  const skip = page * itemsPerPage; // Calculate how many items to skip
+  const itemsPerPage = 20;
+  const skip = page * itemsPerPage;
   const paginatedResults = data.slice(skip, skip + itemsPerPage);
+  const carousel = data.length >= 12 ? data.slice(0, 12) : data.length >= 6 ? data.slice(0, 6) : [];
 
-  // Return the paginated results and current page
   return {
     results: paginatedResults,
     page,
+    carousel
   };
 }

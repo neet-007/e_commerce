@@ -11,7 +11,7 @@ export const Route = createFileRoute("/men/$productId")({
 
 function ProductPage() {
   const data = Route.useLoaderData();
-  if (!data) {
+  if (!data?.results) {
     return (
       <div>not found</div>
     )
@@ -19,7 +19,7 @@ function ProductPage() {
 
   return (
     <div className="flex f-d-column gap-2">
-      <PageItemCard item={data} />
+      <PageItemCard item={data.results} />
       <ItemsCarousel />
     </div>
   )

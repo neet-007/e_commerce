@@ -4,6 +4,7 @@
 	--success-clr: blue;
 	--warning-clr: blue;
 	box-sizing: border-box;
+	text-transform: capitalize;
 }
 
 .primary-color {
@@ -43,6 +44,19 @@
 
 .gap-4 {
 	gap: 2rem;
+}
+
+.h3 {
+	font-size: 1.7em;
+	font-weight: bolder;
+	text-transform: capitalize;
+}
+
+.button-none {
+	background: none;
+	border: none;
+	cursor: pointer;
+	text-transform: capitalize;
 }
 
 .cursor-pointer {

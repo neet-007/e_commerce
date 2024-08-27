@@ -2,12 +2,16 @@ import React, { ComponentProps } from "react";
 import "./cart.css"
 import { CartItemCard } from "./CartItemCard";
 import { Button } from "../Shared/Button";
+import { useCartContext } from "../../context/cartContext";
 
 type CartProps = {}
 
 
 export const Cart: React.FC<ComponentProps<"div"> & CartProps> = ({ ...props }) => {
 
+  const { cartItems } = useCartContext();
+
+  console.log(cartItems);
   return (
     <div className="cart-container" {...props}>
       <div className="cart-bag">
@@ -15,10 +19,9 @@ export const Cart: React.FC<ComponentProps<"div"> & CartProps> = ({ ...props }) 
           bag
         </div>
         <div className="cart-bag-items">
-          <CartItemCard />
-          <CartItemCard />
-          <CartItemCard />
-          <CartItemCard />
+          {cartItems.map((item, i) => (
+            <CartItemCard key={`cart-item-${item.item.itemId}-${i}`} item={item} />
+          ))}
         </div>
       </div>
       <div className="cart-summery">

@@ -1,11 +1,14 @@
 import React, { ComponentProps } from "react";
 import './cart.css'
+import { useCartContext } from "../../context/cartContext";
 
 type CartIconProps = {}
 
 
 export const CartIcon: React.FC<ComponentProps<"button"> & CartIconProps> = ({ className,
   ...props }) => {
+
+  const { count } = useCartContext();
 
   return (
     <button className={`cart-icon-container ${className}`} {...props}>
@@ -22,7 +25,7 @@ export const CartIcon: React.FC<ComponentProps<"button"> & CartIconProps> = ({ c
         </svg>
       </div>
       <div className="cart-icon-count">
-        1
+        {count}
       </div>
     </button>
   )

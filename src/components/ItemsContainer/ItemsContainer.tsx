@@ -13,8 +13,8 @@ export const ItemsContainer: React.FC<ComponentProps<"div"> & ItemsContainerProp
 	return (
 		<div className="items-container" {...props}>
 			{results.map((v, i) => (
-				<ItemCard key={`item-contain${i}-${v.ItemId}`}
-					ItemId={v.ItemId} title={v.title}
+				<ItemCard key={`item-contain${i}-${v.itemId}`}
+					itemId={v.itemId} title={v.title}
 					optionsSelector={v.optionsSelector}
 					optionsSelectorClr={v.optionsSelectorClr}
 					description={v.description}

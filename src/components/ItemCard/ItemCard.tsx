@@ -1,6 +1,7 @@
 import React, { ComponentProps } from "react";
 import "./itemcard.css"
 import { Button } from "../Shared/Button";
+import { useCartContext } from "../../context/cartContext";
 
 export type ItemCardProps = {
 	itemId: number
@@ -13,8 +14,10 @@ export type ItemCardProps = {
 
 
 export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({
-	id, title, optionsSelector, optionsSelectorClr, description, price,
+	itemId, title, optionsSelector, optionsSelectorClr, description, price,
 	...props }) => {
+
+	const { addItem } = useCartContext();
 
 	return (
 		<div className="item-card-container" {...props}>
@@ -27,7 +30,7 @@ export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({
 					{optionsSelector.length === 0 ?
 						null :
 						optionsSelector.map((s, i) => (
-							<button key={`${s}-${i}-item${id}-card`}
+							<button key={`${s}-${i}-item${itemId}-card`}
 								className="item-card-option-selector">
 								{s}
 							</button>
@@ -38,7 +41,7 @@ export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({
 					{optionsSelectorClr.length === 0 ?
 						null :
 						optionsSelectorClr.map((s, i) => (
-							<button key={`${s}-${i}-item${id}-clr`}
+							<button key={`${s}-${i}-item${itemId}-clr`}
 								className="item-card-option-selector">
 								<div className="item-card-option-selector-clr"
 									style={{ backgroundColor: s }}>
@@ -62,7 +65,16 @@ export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({
 				<Button variant="primary"
 					size="md"
 					roundedCorners
-					className="item-card-footer-item">
+					className="item-card-footer-item"
+					onClick={() => addItem({
+						itemId,
+						title,
+						optionsSelector,
+						optionsSelectorClr,
+						description,
+						price
+					})}
+				>
 					add to cart
 				</Button>
 			</div>

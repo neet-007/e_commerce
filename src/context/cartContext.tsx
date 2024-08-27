@@ -1,11 +1,11 @@
 import React, { useState, useContext, createContext } from "react";
-import { ItemCardProps } from "../components/ItemCard/ItemCard"
+import { ItemType } from "../components/ItemCard/ItemCard"
 
-export type CartItemType = { item: ItemCardProps, quantity: number, price: number };
+export type CartItemType = { item: ItemType, quantity: number, price: number };
 
 type CartContextType = {
   cartItems: CartItemType[];
-  addItem: (item: ItemCardProps) => void;
+  addItem: (item: ItemType) => void;
   removeSingleItem: (id: number) => void;
   removeItem: (id: number) => void;
   count: number;
@@ -13,7 +13,7 @@ type CartContextType = {
 
 const INITIAL_STATE = {
   cartItems: [],
-  addItem: (_: ItemCardProps) => { },
+  addItem: (_: ItemType) => { },
   removeSingleItem: (_: number) => { },
   removeItem: (_: number) => { },
   count: 0,
@@ -25,7 +25,7 @@ export const CartContextProvider: React.FC<React.ComponentProps<"div">> = ({ chi
   const [cartItems, setCartItems] = useState<CartItemType[]>([]);
   const [count, setCount] = useState<number>(0);
 
-  function addItem(item: ItemCardProps) {
+  function addItem(item: ItemType) {
     setCartItems(prev => {
       if (!prev.find(x => x.item.itemId === item.itemId)) {
         prev.push({

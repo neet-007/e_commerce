@@ -1,9 +1,9 @@
 import React, { ComponentProps } from "react";
 import "./itemsContainer.css"
-import { ItemCard, ItemCardProps } from "../ItemCard/ItemCard";
+import { ItemCard, ItemType } from "../ItemCard/ItemCard";
 
 type ItemsContainerProps = {
-	results: ItemCardProps[]
+	results: ItemType[]
 }
 
 
@@ -14,11 +14,7 @@ export const ItemsContainer: React.FC<ComponentProps<"div"> & ItemsContainerProp
 		<div className="items-container" {...props}>
 			{results.map((v, i) => (
 				<ItemCard key={`item-contain${i}-${v.itemId}`}
-					itemId={v.itemId} title={v.title}
-					optionsSelector={v.optionsSelector}
-					optionsSelectorClr={v.optionsSelectorClr}
-					description={v.description}
-					price={v.price} />
+					item={v} />
 			))}
 		</div>
 	)

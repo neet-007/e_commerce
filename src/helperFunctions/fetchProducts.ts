@@ -1,7 +1,7 @@
-import { ItemCardProps } from "../components/ItemCard/ItemCard";
+import { ItemType } from "../components/ItemCard/ItemCard";
 
 type ReturnType = {
-  results: ItemCardProps[]; // Paginated results
+  results: ItemType[]; // Paginated results
   page: number;            // Current page number
 };
 

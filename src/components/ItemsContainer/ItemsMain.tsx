@@ -3,11 +3,11 @@ import "./itemsContainer.css"
 import { ItemsContainerFilter } from "./itemsContainerFilter";
 import { ItemsContainer } from "./ItemsContainer";
 import { ItemsContainerBar } from "./ItemsContainerBar";
-import { ItemCardProps } from "../ItemCard/ItemCard";
+import { ItemType } from "../ItemCard/ItemCard";
 
 type ItemsMainProps = {
 	data: {
-		results: ItemCardProps[];
+		results: ItemType[];
 		page: number
 	}
 }

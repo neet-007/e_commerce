@@ -3,7 +3,7 @@ import "./itemcard.css"
 import { Button } from "../Shared/Button";
 import { useCartContext } from "../../context/cartContext";
 
-export type ItemCardProps = {
+export type ItemType = {
 	itemId: number
 	title: string
 	optionsSelector: string[]
@@ -12,25 +12,28 @@ export type ItemCardProps = {
 	price: { amount: number, currency: string }
 }
 
+export type ItemCardProps = {
+	item: ItemType
+}
+
 
 export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({
-	itemId, title, optionsSelector, optionsSelectorClr, description, price,
-	...props }) => {
+	item, ...props }) => {
 
 	const { addItem } = useCartContext();
 
 	return (
 		<div className="item-card-container" {...props}>
 			<div className="item-card-title">
-				{title}
+				{item.title}
 			</div>
 			<img className="item-card-img" src="/head_phone_black.jpg" />
 			<div className="item-card-options">
 				<div className="item-card-option">
-					{optionsSelector.length === 0 ?
+					{item.optionsSelector.length === 0 ?
 						null :
-						optionsSelector.map((s, i) => (
-							<button key={`${s}-${i}-item${itemId}-card`}
+						item.optionsSelector.map((s, i) => (
+							<button key={`${s}-${i}-item${item.itemId}-card`}
 								className="item-card-option-selector">
 								{s}
 							</button>
@@ -38,10 +41,10 @@ export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({
 					}
 				</div>
 				<div className="item-card-option">
-					{optionsSelectorClr.length === 0 ?
+					{item.optionsSelectorClr.length === 0 ?
 						null :
-						optionsSelectorClr.map((s, i) => (
-							<button key={`${s}-${i}-item${itemId}-clr`}
+						item.optionsSelectorClr.map((s, i) => (
+							<button key={`${s}-${i}-item${item.itemId}-clr`}
 								className="item-card-option-selector">
 								<div className="item-card-option-selector-clr"
 									style={{ backgroundColor: s }}>
@@ -55,25 +58,18 @@ export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({
 				</div>
 			</div>
 			<div className="item-card-description">
-				{description}
+				{item.description}
 			</div>
 			<div className="item-card-footer">
 				<div className="item-card-footer-item">
-					<span>{price.amount}</span>
-					<span>{price.currency}</span>
+					<span>{item.price.amount}</span>
+					<span>{item.price.currency}</span>
 				</div>
 				<Button variant="primary"
 					size="md"
 					roundedCorners
 					className="item-card-footer-item"
-					onClick={() => addItem({
-						itemId,
-						title,
-						optionsSelector,
-						optionsSelectorClr,
-						description,
-						price
-					})}
+					onClick={() => addItem(item)}
 				>
 					add to cart
 				</Button>

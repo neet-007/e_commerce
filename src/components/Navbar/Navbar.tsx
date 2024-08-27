@@ -2,6 +2,7 @@ import React, { ComponentProps } from "react";
 import { CartIcon } from "../Cart/CartIcon";
 import "./navbar.css"
 import { Link } from "@tanstack/react-router";
+import { NavbarSearch } from "./NavbarSearch";
 
 type NavbarProps = {}
 
@@ -90,10 +91,7 @@ export const Navbar: React.FC<ComponentProps<"nav"> & NavbarProps> = ({ ...props
 			</ul>
 			<div className="nav-bar-options">
 				<div>
-					like
-				</div>
-				<div>
-					search
+					<NavbarSearch />
 				</div>
 				<Link to="/cart">
 					<CartIcon />

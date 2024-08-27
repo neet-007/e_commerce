@@ -6,7 +6,7 @@ import "../App.css"
 export const Route = createRootRoute({
   component: () => {
     return (
-      <div>
+      <div className="main-route">
         <Navbar />
         <Outlet />
       </div>

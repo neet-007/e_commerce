@@ -1,5 +1,6 @@
 .button-class {
 	border: 1px solid black;
+	cursor: pointer;
 }
 
 .border-radius-button {

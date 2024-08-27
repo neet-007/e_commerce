@@ -1,4 +1,6 @@
-.items-carousel-container {}
+.items-carousel-container {
+	overflow: hidden;
+}
 
 .items-carousel-header {
 	display: flex;
@@ -28,7 +30,12 @@
 
 .items-carousel-items {
 	display: flex;
-	gap: 1rem;
+	align-items: center;
+	transition: transform 200ms ease-out;
+}
+
+.items-carousel-items * {
+	flex: 0 0 33%;
 }
 
 .items-carousel-item-card-container {

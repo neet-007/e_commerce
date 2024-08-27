@@ -7,6 +7,7 @@
 	;
 	gap: 1rem;
 	padding: 1rem;
+	position: relative;
 }
 
 .items-container {
@@ -18,10 +19,14 @@
 
 .items-container-bar {
 	display: flex;
+	position: sticky;
+	top: 8%;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0.5rem 1rem;
 	grid-area: items-container-bar;
+	background-color: white;
+	z-index: 1000;
 }
 
 .items-container-filter {
@@ -34,6 +39,12 @@
 .items-container-filter-ul {
 	list-style: none;
 	padding: 0;
+}
+
+.items-container-filter-picker {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.25rem;
 }
 
 @media only screen and (min-width: 774px) and (max-width:929px) {
@@ -61,5 +72,8 @@
 
 	.items-container-filter {
 		display: flex;
+		position: fixed;
+		width: 20%;
+		overflow: scroll;
 	}
 }

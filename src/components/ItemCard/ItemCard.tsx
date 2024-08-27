@@ -1,7 +1,6 @@
 import React, { ComponentProps } from "react";
 import "./itemcard.css"
-import { Button } from "../Shared/Button";
-import { useCartContext } from "../../context/cartContext";
+import { useLocation, useNavigate } from "@tanstack/react-router";
 
 export type ItemType = {
 	itemId: number
@@ -20,14 +19,19 @@ export type ItemCardProps = {
 export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({
 	item, ...props }) => {
 
-	const { addItem } = useCartContext();
-
+	const location = useLocation();
+	const naivate = useNavigate()
 	return (
 		<div className="item-card-container" {...props}>
 			<div className="item-card-title">
 				{item.title}
 			</div>
-			<img className="item-card-img" src="/head_phone_black.jpg" />
+			<img className="item-card-img" src="/head_phone_black.jpg"
+				onClick={() => naivate({
+					to: `${location.pathname.replace("/clothing", "")}/$productId`,
+					params: { productId: String(item.itemId) }
+				})}
+			/>
 			<div className="item-card-options">
 				<div className="item-card-option">
 					{item.optionsSelector.length === 0 ?
@@ -65,14 +69,6 @@ export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({
 					<span>{item.price.amount}</span>
 					<span>{item.price.currency}</span>
 				</div>
-				<Button variant="primary"
-					size="md"
-					roundedCorners
-					className="item-card-footer-item"
-					onClick={() => addItem(item)}
-				>
-					add to cart
-				</Button>
 			</div>
 		</div>
 	)

@@ -19,9 +19,7 @@ function ProductPage() {
 
   return (
     <div className="flex f-d-column gap-2">
-      <ItemCard itemId={data.itemId} title={data.title} optionsSelector={data.optionsSelector}
-        optionsSelectorClr={data.optionsSelectorClr} description={data.description}
-        price={data.price} />
+      <ItemCard item={data} />
       <ItemsCarousel />
     </div>
   )

@@ -67,6 +67,84 @@
 	flex-basis: 100%;
 }
 
+.page-item-card-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	padding: 1rem;
+	place-items: center;
+	grid-template-areas:
+		"page-item-card-title"
+		"page-item-card-price"
+		"page-item-card-img"
+		"page-item-card-images-list"
+		"page-item-card-options"
+		"page-item-card-options-clr"
+		"page-item-card-button"
+		"page-item-card-description"
+	;
+}
+
+.page-item-card-title {
+	grid-area: page-item-card-title;
+	width: 100%;
+}
+
+.page-item-card-price {
+	grid-area: page-item-card-price;
+	width: 100%;
+}
+
+.page-item-card-img {
+	grid-area: page-item-card-img;
+	max-width: 20rem;
+}
+
+.page-item-card-images-list {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	grid-area: page-item-card-images-list;
+	width: 100%;
+}
+
+.page-item-card-img-list-item {
+	max-width: 6rem;
+}
+
+.page-item-card-options {
+	grid-area: page-item-card-options;
+	display: flex;
+	gap: 1rem;
+	width: 100%;
+}
+
+.page-item-card-option {
+	display: flex;
+	gap: 0.5rem;
+	border: 1px solid black;
+	justify-content: center;
+	align-items: center;
+	padding: 0.75rem;
+	background: none;
+}
+
+.page-item-card-options-clr {
+	grid-area: page-item-card-options-clr;
+	display: flex;
+	gap: 1rem;
+	width: 100%;
+}
+
+.page-item-card-button {
+	grid-area: page-item-card-button;
+	width: 100%;
+}
+
+.page-item-card-description {
+	grid-area: page-item-card-description;
+	width: 100%;
+}
 
 @media only screen and (min-width: 774px) {
 	.item-card-container {
@@ -79,4 +157,26 @@
 			"item-card-description"
 			"item-card-footer";
 	}
+
+	.page-item-card-container {
+		grid-template-columns: 10% 40% 50%;
+		grid-template-areas:
+			"page-item-card-images-list page-item-card-img page-item-card-title"
+			"page-item-card-images-list page-item-card-img page-item-card-price"
+			"page-item-card-images-list . page-item-card-options"
+			"page-item-card-images-list . page-item-card-options"
+			"page-item-card-images-list . page-item-card-options-clr"
+			"page-item-card-images-list . page-item-card-options-clr"
+			". . page-item-card-button"
+			". . page-item-card-description"
+			". . page-item-card-description"
+			". . page-item-card-description"
+		;
+	}
+
+	.page-item-card-images-list {
+		height: 100%;
+		flex-direction: column;
+	}
+
 }

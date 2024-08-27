@@ -3,6 +3,7 @@
 	--secondary-clr: blue;
 	--success-clr: blue;
 	--warning-clr: blue;
+	box-sizing: border-box;
 }
 
 .primary-color {

@@ -20,7 +20,7 @@ function ProductPage() {
   return (
     <div className="flex f-d-column gap-2">
       <PageItemCard item={data.results} />
-      <ItemsCarousel />
+      <ItemsCarousel items={data.carousel} />
     </div>
   )
 }

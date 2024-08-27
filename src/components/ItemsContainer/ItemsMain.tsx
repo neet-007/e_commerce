@@ -1,4 +1,4 @@
-import React, { ComponentProps } from "react";
+import React, { ComponentProps, useState } from "react";
 import "./itemsContainer.css"
 import { ItemsContainerFilter } from "./itemsContainerFilter";
 import { ItemsContainer } from "./ItemsContainer";
@@ -15,11 +15,13 @@ type ItemsMainProps = {
 
 export const ItemsMain: React.FC<ComponentProps<"div"> & ItemsMainProps> = ({
 	data, ...props }) => {
+	const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
 
 	return (
 		<div className="items-main" {...props}>
-			<ItemsContainerFilter />
-			<ItemsContainerBar />
+			<ItemsContainerFilter isFilterOpen={isFilterOpen}
+				setIsFilterOpen={setIsFilterOpen} />
+			<ItemsContainerBar setIsFilterOpen={setIsFilterOpen} />
 			<ItemsContainer results={data.results} />
 		</div>
 	)

@@ -1,19 +1,15 @@
 import React, { ComponentProps, useRef, useState } from "react";
 import "./itemsCarousel.css"
+import { ItemType } from "../ItemCard/ItemCard";
 import { ItemsCarouselItemCard } from "./ItemsCarouselItemCard";
 
-type ItemsCarouselProps = {}
+type ItemsCarouselProps = {
+	items: ItemType[]
+}
 
 
-export const ItemsCarousel: React.FC<ComponentProps<"div"> & ItemsCarouselProps> = ({ ...props }) => {
-	const [items, _] = useState([
-		<ItemsCarouselItemCard key={'car-1'} />,
-		<ItemsCarouselItemCard key={'car-2'} />,
-		<ItemsCarouselItemCard key={'car-3'} />,
-		<ItemsCarouselItemCard key={'car-4'} />,
-		<ItemsCarouselItemCard key={'car-5'} />,
-		<ItemsCarouselItemCard key={'car-6'} />,
-	])
+export const ItemsCarousel: React.FC<ComponentProps<"div"> & ItemsCarouselProps> = ({
+	items, ...props }) => {
 	const [sliderIndex, setSliderIndex] = useState<number>(1);
 	const containerRef = useRef<HTMLDivElement>(null);
 
@@ -58,7 +54,8 @@ export const ItemsCarousel: React.FC<ComponentProps<"div"> & ItemsCarouselProps>
 			</div>
 			<div className="items-carousel-items" ref={containerRef}>
 				{items.map(v => (
-					v
+					<ItemsCarouselItemCard
+						key={`items-carousel-${v.itemId}-${v.title}`} />
 				))}
 			</div>
 		</div>

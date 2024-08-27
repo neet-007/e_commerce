@@ -2,7 +2,10 @@ import React, { ComponentProps, useState } from "react";
 import "./itemsContainer.css"
 import { Button } from "../Shared/Button";
 
-type ItemsContainerFilterProps = {}
+type ItemsContainerFilterProps = {
+	isFilterOpen: boolean;
+	setIsFilterOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 type CheckBoxProps = {
 	itemName: string;
@@ -69,7 +72,8 @@ const ButtonContainer: React.FC<ComponentProps<"div"> & ButtonsContainer> = ({
 	)
 }
 
-export const ItemsContainerFilter: React.FC<ComponentProps<"div"> & ItemsContainerFilterProps> = ({ ...props }) => {
+export const ItemsContainerFilter: React.FC<ComponentProps<"div"> & ItemsContainerFilterProps> = (
+	{ isFilterOpen, setIsFilterOpen, ...props }) => {
 	const [testItems, _] = useState<CheckBoxContainerProps[]>([
 		{
 			containerName: "container1", items: [
@@ -95,7 +99,14 @@ export const ItemsContainerFilter: React.FC<ComponentProps<"div"> & ItemsContain
 	])
 
 	return (
-		<div className="items-container-filter" {...props}>
+		<div className={`items-container-filter ${isFilterOpen ? "items-container-filter-open" : ""}`} {...props}>
+			<div className="items-container-filter-header">
+				<div>filter</div>
+				<button className="button-none"
+					onClick={() => setIsFilterOpen(false)}>
+					X
+				</button>
+			</div>
 			{testItems.map((v, i) => (
 				<CheckBoxContainer containerName={v.containerName}
 					key={`container-${v.containerName}-${i}`}

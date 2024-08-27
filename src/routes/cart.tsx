@@ -11,7 +11,7 @@ function CartPage() {
   return (
     <div className="flex f-d-column gap-2">
       <Cart />
-      <ItemsCarousel />
+      <ItemsCarousel items={[]} />
     </div>
   )
 }

@@ -36,6 +36,24 @@
 	grid-area: items-container-filter;
 }
 
+.items-container-filter-open {
+	display: flex;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: white;
+	z-index: 100000;
+	overflow-y: scroll;
+	padding: 2rem;
+}
+
+.items-container-filter-header {
+	display: flex;
+	justify-content: space-between;
+}
+
 .items-container-filter-ul {
 	list-style: none;
 	padding: 0;
@@ -74,6 +92,21 @@
 		display: flex;
 		position: fixed;
 		width: 20%;
-		overflow: scroll;
+		overflow-y: scroll;
+	}
+
+	.items-container-filter-open {
+		display: flex;
+		position: fixed;
+		top: auto;
+		left: auto;
+		bottom: auto;
+		right: auto;
+		width: 20%;
+		padding: 0;
+	}
+
+	.items-container-filter-header {
+		display: none;
 	}
 }

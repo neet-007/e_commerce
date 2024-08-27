@@ -8,7 +8,8 @@ import { ItemType } from "../ItemCard/ItemCard";
 type ItemsMainProps = {
 	data: {
 		results: ItemType[];
-		page: number
+		page: number;
+		filters: Map<string, string[]>
 	}
 }
 
@@ -20,7 +21,8 @@ export const ItemsMain: React.FC<ComponentProps<"div"> & ItemsMainProps> = ({
 	return (
 		<div className="items-main" {...props}>
 			<ItemsContainerFilter isFilterOpen={isFilterOpen}
-				setIsFilterOpen={setIsFilterOpen} />
+				setIsFilterOpen={setIsFilterOpen}
+				filtersOptions={data.filters} />
 			<ItemsContainerBar setIsFilterOpen={setIsFilterOpen} />
 			<ItemsContainer results={data.results} />
 		</div>

@@ -5,8 +5,8 @@ import { useLocation, useNavigate } from "@tanstack/react-router";
 export type ItemType = {
 	itemId: number
 	title: string
-	optionsSelector: string[]
-	optionsSelectorClr: string[]
+	optionsSelector: { name: string, options: string[] }
+	optionsSelectorClr: { name: string, options: string[] }
 	description: string
 	price: { amount: number, currency: string }
 }
@@ -34,9 +34,9 @@ export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({
 			/>
 			<div className="item-card-options">
 				<div className="item-card-option">
-					{item.optionsSelector.length === 0 ?
+					{item.optionsSelector.options.length === 0 ?
 						null :
-						item.optionsSelector.map((s, i) => (
+						item.optionsSelector.options.map((s, i) => (
 							<button key={`${s}-${i}-item${item.itemId}-card`}
 								className="item-card-option-selector">
 								{s}
@@ -45,9 +45,9 @@ export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({
 					}
 				</div>
 				<div className="item-card-option">
-					{item.optionsSelectorClr.length === 0 ?
+					{item.optionsSelectorClr.options.length === 0 ?
 						null :
-						item.optionsSelectorClr.map((s, i) => (
+						item.optionsSelectorClr.options.map((s, i) => (
 							<button key={`${s}-${i}-item${item.itemId}-clr`}
 								className="item-card-option-selector">
 								<div className="item-card-option-selector-clr"

@@ -1,5 +1,6 @@
-import React, { ComponentProps } from "react";
+import React, { ComponentProps, useRef, useState } from "react";
 import "./navbar.css"
+import { useLocation, useNavigate } from "@tanstack/react-router";
 
 type NavbarSearchProps = {}
 
@@ -7,11 +8,37 @@ type NavbarSearchProps = {}
 export const NavbarSearch: React.FC<ComponentProps<"form"> & NavbarSearchProps> = ({
 	...props }) => {
 
+	const navigate = useNavigate();
+	const location = useLocation();
+	const inputRef = useRef<HTMLInputElement>(null);
+	function onClick(e: React.MouseEvent<HTMLButtonElement>) {
+		e.preventDefault();
+		if (!inputRef.current) {
+			return
+		}
+		let search;
+		if (location.pathname.includes("search")) {
+			search = { ...location.search };
+			search.title = inputRef.current.value.toLocaleLowerCase();
+		} else {
+			search = { title: inputRef.current.value.toLocaleLowerCase() };
+		}
+		navigate({
+			to: "/search",
+			search: {
+				...search,
+			}
+		})
+	}
+
 	return (
 		<form className="nav-bar-search-form" {...props}>
 			<input type="text" className="nav-bar-search-input"
-				placeholder="search" />
-			<button className="nav-bar-search-icon">
+				placeholder="search"
+				ref={inputRef} />
+			<button className="nav-bar-search-icon"
+				onClick={onClick}
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="16"

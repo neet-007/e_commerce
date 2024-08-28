@@ -9,7 +9,6 @@ type NavbarProps = {}
 
 export const Navbar: React.FC<ComponentProps<"nav"> & NavbarProps> = ({ ...props }) => {
 	const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
-
 	return (
 		<nav className="nav-bar-nav" {...props}>
 			<Link to="/">

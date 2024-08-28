@@ -138,7 +138,8 @@
 @media only screen and (min-width: 1000px) {
 	.cart-container {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		padding: 2rem;
+		grid-template-columns: 60% 40%;
 		grid-template-areas:
 			"cart-bag cart-summery";
 	}

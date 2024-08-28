@@ -5,6 +5,7 @@ type ReturnType = {
 	page: number;
 	carousel: ItemType[];
 	filters: Map<string, [string, boolean][]>
+	colors: [string, boolean][]
 };
 
 export async function fetchProducts(
@@ -43,7 +44,12 @@ export async function fetchProducts(
 			const filterOptions = value.split(",")
 			for (let i = 0; i < filterOptions.length; i++) {
 				for (let j = 0; j < paginatedResults.length; j++) {
-					if (paginatedResults[j].optionsSelector.name.toLocaleLowerCase() === key &&
+					if (key === "color") {
+						if (paginatedResults[j].optionsSelectorClr.map(x => x.toLocaleLowerCase().includes(filterOptions[i]))) {
+							filteredResults.push(paginatedResults[j])
+						}
+					}
+					else if (paginatedResults[j].optionsSelector.name.toLocaleLowerCase() === key &&
 						paginatedResults[j].optionsSelector.options.map(x => x.toLocaleLowerCase()).includes(filterOptions[i])) {
 						filteredResults.push(paginatedResults[j])
 					}
@@ -51,12 +57,11 @@ export async function fetchProducts(
 			}
 		})
 		console.log(filteredResults)
-		paginatedResults = filteredResults
+		paginatedResults = Array.from(new Set(filteredResults))
 	}
 
 	const filters = paginatedResults.reduce((prev: Map<string, [string, boolean][]>, curr) => {
 		const key = curr.optionsSelector.name.toLowerCase();
-
 		const existingOptions = prev.get(key) || [];
 
 		const existingOptionsMap = new Map(existingOptions);
@@ -79,10 +84,26 @@ export async function fetchProducts(
 		return prev;
 	}, new Map<string, [string, boolean][]>());
 
+	const colors = paginatedResults.reduce((prev: [string, boolean][], curr) => {
+		if (curr.optionsSelectorClr && curr.optionsSelectorClr) {
+			curr.optionsSelectorClr.forEach((color) => {
+				if (searchParams && Object.keys(searchParams).length && searchParams.color) {
+					if (!prev.find(x => x[0] === color.toLocaleLowerCase())) {
+						prev.push([color.toLocaleLowerCase(), searchParams.color.split(",").includes(color.toLocaleLowerCase())])
+					}
+				} else if (!prev.find(x => x[0] === color.toLocaleLowerCase())) {
+					prev.push([color.toLocaleLowerCase(), false])
+				}
+			});
+		}
+		return prev;
+	}, []);
+
 	return {
 		results: paginatedResults,
 		page,
 		carousel,
-		filters
+		filters,
+		colors
 	};
 }

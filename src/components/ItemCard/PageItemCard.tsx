@@ -12,7 +12,7 @@ export const PageItemCard: React.FC<ComponentProps<"div"> & PageItemCardProps> =
 	item, ...props }) => {
 
 	const { addItem } = useCartContext();
-
+	console.log(item)
 	return (
 		<div className="page-item-card-container" {...props}>
 			<div className="page-item-card-title">
@@ -29,7 +29,7 @@ export const PageItemCard: React.FC<ComponentProps<"div"> & PageItemCardProps> =
 					className="page-item-card-img-list-item" />
 			</div>
 			<div className="page-item-card-options">
-				{item.optionsSelector.map((v, i) => (
+				{item.optionsSelector.options.map((v, i) => (
 					<button key={`item-card-${i}-${item.itemId}`}
 						className="page-item-card-option">
 						{v}
@@ -37,7 +37,7 @@ export const PageItemCard: React.FC<ComponentProps<"div"> & PageItemCardProps> =
 				))}
 			</div>
 			<div className="page-item-card-options-clr">
-				{item.optionsSelectorClr.map((v, i) => (
+				{item.optionsSelectorClr.options.map((v, i) => (
 					<button key={`item-card-${i}-${item.itemId}`}
 						className="page-item-card-option">
 						{v}

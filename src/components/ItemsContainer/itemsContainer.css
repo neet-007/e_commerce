@@ -33,6 +33,7 @@
 	display: none;
 	flex-direction: column;
 	gap: 1rem;
+	overflow-y: scroll;
 	grid-area: items-container-filter;
 }
 
@@ -52,6 +53,38 @@
 .items-container-filter-header {
 	display: flex;
 	justify-content: space-between;
+}
+
+.items-container-filter-colors {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	place-self: center;
+	width: 100%;
+	gap: 1rem;
+}
+
+.items-container-filter-color {
+	position: relative;
+	height: 1.5rem;
+	width: 1.5rem;
+	border-radius: 50%;
+}
+
+.items-container-filter-color-button {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.items-container-filter-color-check {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1000;
+	color: white;
 }
 
 .items-container-filter-ul {
@@ -93,6 +126,7 @@
 		position: fixed;
 		width: 20%;
 		overflow-y: scroll;
+		height: 100%;
 	}
 
 	.items-container-filter-open {

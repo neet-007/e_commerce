@@ -1,11 +1,13 @@
 import React, { ComponentProps } from "react";
 import "./itemsCarousel.css"
 import { useNavigate } from "@tanstack/react-router";
+import { ItemType } from "../ItemCard/ItemCard";
 
-type ItemsCarouselItemCardProps = {}
+type ItemsCarouselItemCardProps = {
+	item: ItemType;
+}
 
-
-export const ItemsCarouselItemCard: React.FC<ComponentProps<"div"> & ItemsCarouselItemCardProps> = ({ ...props }) => {
+export const ItemsCarouselItemCard: React.FC<ComponentProps<"div"> & ItemsCarouselItemCardProps> = ({ item, ...props }) => {
 
 	const navigate = useNavigate();
 	return (
@@ -14,17 +16,18 @@ export const ItemsCarouselItemCard: React.FC<ComponentProps<"div"> & ItemsCarous
 				src="/head_phone_black.jpg" alt=""
 				onClick={() => navigate({
 					to: "/men/$productId",
-					params: { productId: "21" }
+					params: { productId: String(item.itemId) }
 				})}
 			/>
 			<div className="itmes-carousel-item-card-title">
-				titel
+				{item.title}
 			</div>
 			<div className="itmes-carousel-item-card-category">
-				caregoy
+				{item.title}
 			</div>
 			<div className="itmes-carousel-item-card-price">
-				90 sar
+				<span>{item.price.amount}</span>
+				<span>{item.price.currency}</span>
 			</div>
 		</div>
 	)

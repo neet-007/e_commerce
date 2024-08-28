@@ -12,7 +12,7 @@ export const ItemsCarousel: React.FC<ComponentProps<"div"> & ItemsCarouselProps>
 	items, ...props }) => {
 	const [sliderIndex, setSliderIndex] = useState<number>(1);
 	const containerRef = useRef<HTMLDivElement>(null);
-
+	console.log()
 	function move(dir: "l" | "r") {
 		if (!containerRef.current) {
 			return;
@@ -55,7 +55,8 @@ export const ItemsCarousel: React.FC<ComponentProps<"div"> & ItemsCarouselProps>
 			<div className="items-carousel-items" ref={containerRef}>
 				{items.map(v => (
 					<ItemsCarouselItemCard
-						key={`items-carousel-${v.itemId}-${v.title}`} />
+						key={`items-carousel-${v.itemId}-${v.title}`}
+						item={v} />
 				))}
 			</div>
 		</div>

@@ -7,6 +7,7 @@ type ItemsContainerFilterProps = {
 	isFilterOpen: boolean;
 	setIsFilterOpen: React.Dispatch<React.SetStateAction<boolean>>;
 	filtersOptions: Map<string, [string, boolean][]>
+	colors: [string, boolean][]
 }
 
 type CheckBoxProps = {
@@ -97,8 +98,9 @@ const ButtonContainer: React.FC<ComponentProps<"div"> & ButtonsContainer> = ({
 }
 
 export const ItemsContainerFilter: React.FC<ComponentProps<"div"> & ItemsContainerFilterProps> = (
-	{ isFilterOpen, setIsFilterOpen, filtersOptions, ...props }) => {
+	{ isFilterOpen, setIsFilterOpen, filtersOptions, colors, ...props }) => {
 	const navigate = useNavigate();
+	const location = useLocation();
 
 	return (
 		<div className={`items-container-filter ${isFilterOpen ? "items-container-filter-open" : ""}`} {...props}>
@@ -121,6 +123,37 @@ export const ItemsContainerFilter: React.FC<ComponentProps<"div"> & ItemsContain
 				]}
 				navigate={navigate}
 			/>
+			<div className="items-container-filter-colors">
+				{colors.map((v, i) => (
+					<button key={`colors-button-${v[0]}-${i}`}
+						className="button-none items-container-filter-color-button"
+						onClick={() => {
+							const newSearch = { ...location.search };
+							if (newSearch.color) {
+								newSearch.color = newSearch.color + "," + v[0].toLocaleLowerCase();
+							} else {
+								newSearch.color = v[0].toLocaleLowerCase();
+							}
+							navigate({
+								search: {
+									...newSearch
+								}
+							})
+						}}
+					>
+						<div className="items-container-filter-color"
+							style={{ backgroundColor: v[0] }}>
+							{v[1] &&
+								<div className="items-container-filter-color-check">
+									a
+								</div>
+							}
+						</div>
+						<div>{v[0]}</div>
+					</button>
+				))
+				}
+			</div>
 			<div className="items-container-filter-slider">
 				slider
 			</div>

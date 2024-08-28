@@ -6,7 +6,7 @@ export type ItemType = {
 	itemId: number
 	title: string
 	optionsSelector: { name: string, options: string[] }
-	optionsSelectorClr: { name: string, options: string[] }
+	optionsSelectorClr: string[];
 	description: string
 	price: { amount: number, currency: string }
 }
@@ -45,9 +45,9 @@ export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({
 					}
 				</div>
 				<div className="item-card-option">
-					{item.optionsSelectorClr.options.length === 0 ?
+					{item.optionsSelectorClr.length === 0 ?
 						null :
-						item.optionsSelectorClr.options.map((s, i) => (
+						item.optionsSelectorClr.map((s, i) => (
 							<button key={`${s}-${i}-item${item.itemId}-clr`}
 								className="item-card-option-selector">
 								<div className="item-card-option-selector-clr"

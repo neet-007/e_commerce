@@ -10,6 +10,7 @@ type ItemsMainProps = {
 		results: ItemType[];
 		page: number;
 		filters: Map<string, [string, boolean][]>
+		colors: [string, boolean][]
 	}
 }
 
@@ -22,7 +23,9 @@ export const ItemsMain: React.FC<ComponentProps<"div"> & ItemsMainProps> = ({
 		<div className="items-main" {...props}>
 			<ItemsContainerFilter isFilterOpen={isFilterOpen}
 				setIsFilterOpen={setIsFilterOpen}
-				filtersOptions={data.filters} />
+				filtersOptions={data.filters}
+				colors={data.colors}
+			/>
 			<ItemsContainerBar setIsFilterOpen={setIsFilterOpen} />
 			<ItemsContainer results={data.results} />
 		</div>

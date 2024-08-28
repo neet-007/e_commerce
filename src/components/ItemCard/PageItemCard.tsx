@@ -37,7 +37,7 @@ export const PageItemCard: React.FC<ComponentProps<"div"> & PageItemCardProps> =
 				))}
 			</div>
 			<div className="page-item-card-options-clr">
-				{item.optionsSelectorClr.options.map((v, i) => (
+				{item.optionsSelectorClr.map((v, i) => (
 					<button key={`item-card-${i}-${item.itemId}`}
 						className="page-item-card-option">
 						{v}

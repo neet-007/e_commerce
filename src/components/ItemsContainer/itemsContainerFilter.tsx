@@ -1,7 +1,7 @@
 import React, { ComponentProps } from "react";
 import "./itemsContainer.css"
 import { Button } from "../Shared/Button";
-import { useLocation, useNavigate, NavigateFn } from "@tanstack/react-router";
+import { useLocation, useNavigate, NavigateFn, ParsedLocation } from "@tanstack/react-router";
 
 type ItemsContainerFilterProps = {
 	isFilterOpen: boolean;
@@ -14,42 +14,66 @@ type CheckBoxProps = {
 	item: [string, boolean];
 	navigate: NavigateFn
 	containerName: string
+	location: ParsedLocation
 }
 
 type CheckBoxContainerProps = {
 	containerName: string;
 	items: [string, boolean][];
 	navigate: NavigateFn
+	location: ParsedLocation
 }
 
 type ButtonsContainer = {
 	containerName: string;
-	buttons: string[];
+	buttons: [string, boolean][];
 	navigate: NavigateFn
+	location: ParsedLocation
+}
+
+
+function onClick(v: [string, boolean], searchVal: string, newSearch, navigate: NavigateFn) {
+	const lowerCaseVal = v[0].toLocaleLowerCase();
+	//@ts-ignore
+	if (newSearch[searchVal]) {
+		if (v[1]) {
+			//@ts-ignore
+			if (newSearch[searchVal].includes(",")) {
+				//@ts-ignore
+				if (!newSearch[searchVal].includes("," + newSearch[searchVal])) {
+					newSearch[searchVal] = newSearch[searchVal].replace(lowerCaseVal + ",", "")
+				}
+				newSearch[searchVal] = newSearch[searchVal].replace("," + lowerCaseVal, "")
+			} else {
+				//@ts-ignore
+				delete newSearch[searchVal]
+			}
+		} else {
+
+			//@ts-ignore
+			newSearch[searchVal] = newSearch[searchVal] + "," + lowerCaseVal
+		}
+	}
+	else {
+		//@ts-ignore
+		newSearch[searchVal] = lowerCaseVal
+	}
+	navigate({
+		search: {
+			...newSearch
+		}
+	})
 }
 
 const CheckBox: React.FC<ComponentProps<"div"> & CheckBoxProps> = ({
-	item, navigate, containerName, ...props }) => {
-	const location = useLocation();
+	item, navigate, containerName, location, ...props }) => {
+
 	return (
 		<div {...props}>
 			<input id={`check-box-${item}-${item}`}
 				type="checkbox" value={item[0]}
 				checked={item[1]}
-				onChange={(e) => {
-					const newSearch = { ...location.search }
-					if (newSearch[containerName.toLocaleLowerCase()]) {
-						newSearch[containerName.toLocaleLowerCase()] = newSearch[containerName.toLocaleLowerCase()] + "," + e.target.value.toLocaleLowerCase()
-					}
-					else {
-						newSearch[containerName.toLocaleLowerCase()] = e.target.value.toLocaleLowerCase()
-					}
-					navigate({
-						search: {
-							...newSearch
-						}
-					})
-				}}
+				onChange={() => onClick(item, containerName.toLocaleLowerCase(), location.search, navigate)}
 			/>
 			<label htmlFor="">{item[0]}</label>
 		</div>
@@ -57,7 +81,7 @@ const CheckBox: React.FC<ComponentProps<"div"> & CheckBoxProps> = ({
 }
 
 const CheckBoxContainer: React.FC<ComponentProps<"div"> & CheckBoxContainerProps> = ({
-	containerName, items, navigate, ...props }) => {
+	containerName, items, navigate, location, ...props }) => {
 	return (
 		<div className="items-container-filter-checkbox" {...props}>
 			<div>
@@ -68,6 +92,7 @@ const CheckBoxContainer: React.FC<ComponentProps<"div"> & CheckBoxContainerProps
 					<CheckBox key={`checkbox-item${v}-${i}`}
 						item={v}
 						navigate={navigate}
+						location={location}
 						containerName={containerName}
 					/>
 				))}
@@ -78,7 +103,8 @@ const CheckBoxContainer: React.FC<ComponentProps<"div"> & CheckBoxContainerProps
 }
 
 const ButtonContainer: React.FC<ComponentProps<"div"> & ButtonsContainer> = ({
-	containerName, buttons, navigate, ...props }) => {
+	containerName, buttons, navigate, location, ...props }) => {
+
 	return (
 		<div {...props}>
 			<div>
@@ -86,10 +112,12 @@ const ButtonContainer: React.FC<ComponentProps<"div"> & ButtonsContainer> = ({
 			</div>
 			<div className="items-container-filter-picker">
 				{buttons.map((v, i) => (
-					<Button key={`button-contier-button-${v}-${i}`}
+					<Button key={`button-contier-button-${v[0]}-${i}`}
 						size="sm" roundedCorners
-						variant="primary">
-						{v}
+						variant="primary"
+						onClick={() => onClick(v, containerName.toLocaleLowerCase(), location.search, navigate)}
+					>
+						{v[0]}
 					</Button>
 				))}
 			</div>
@@ -112,34 +140,24 @@ export const ItemsContainerFilter: React.FC<ComponentProps<"div"> & ItemsContain
 				</button>
 			</div>
 			{[...filtersOptions].map(([key, value]) => {
+				if (key === "size") {
+					return <ButtonContainer containerName={key}
+						buttons={value}
+						navigate={navigate}
+						location={location}
+					/>
+				}
 				return <CheckBoxContainer containerName={key}
 					items={value}
 					navigate={navigate}
+					location={location}
 				/>
 			})}
-			<ButtonContainer containerName="sizes"
-				buttons={["35", "43", "44",
-					"14", "41", "53"
-				]}
-				navigate={navigate}
-			/>
 			<div className="items-container-filter-colors">
 				{colors.map((v, i) => (
 					<button key={`colors-button-${v[0]}-${i}`}
 						className="button-none items-container-filter-color-button"
-						onClick={() => {
-							const newSearch = { ...location.search };
-							if (newSearch.color) {
-								newSearch.color = newSearch.color + "," + v[0].toLocaleLowerCase();
-							} else {
-								newSearch.color = v[0].toLocaleLowerCase();
-							}
-							navigate({
-								search: {
-									...newSearch
-								}
-							})
-						}}
+						onClick={() => onClick(v, "color", location.search, navigate)}
 					>
 						<div className="items-container-filter-color"
 							style={{ backgroundColor: v[0] }}>

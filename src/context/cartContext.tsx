@@ -1,11 +1,11 @@
 import React, { useState, useContext, createContext } from "react";
 import { ItemType } from "../components/ItemCard/ItemCard"
 
-export type CartItemType = { item: ItemType, quantity: number, price: number };
+export type CartItemType = { item: ItemType, quantity: number, price: number, options: string[], optionsClr: string[] };
 
 type CartContextType = {
   cartItems: CartItemType[];
-  addItem: (item: ItemType) => void;
+  addItem: (item: ItemType, options: string[], optionsClr: string[]) => void;
   removeSingleItem: (id: number) => void;
   removeItem: (id: number) => void;
   count: number;
@@ -14,7 +14,7 @@ type CartContextType = {
 
 const INITIAL_STATE = {
   cartItems: [],
-  addItem: (_: ItemType) => { },
+  addItem: (_: ItemType, __: string[], ___: string[]) => { },
   removeSingleItem: (_: number) => { },
   removeItem: (_: number) => { },
   count: 0,
@@ -28,13 +28,15 @@ export const CartContextProvider: React.FC<React.ComponentProps<"div">> = ({ chi
   const [count, setCount] = useState<number>(0);
   const [total, setTotal] = useState<number>(0);
 
-  function addItem(item: ItemType) {
+  function addItem(item: ItemType, options: string[], optionsClr: string[]) {
     setCartItems(prev => {
       if (!prev.find(x => x.item.itemId === item.itemId)) {
         prev.push({
           item: item,
           price: item.price.amount,
-          quantity: 1
+          quantity: 1,
+          options,
+          optionsClr
         })
         return [...prev]
       }

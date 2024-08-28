@@ -34,6 +34,8 @@ export const CartItemCard: React.FC<ComponentProps<"div"> & CartItemCardProps> =
         </div>
         <div className="cart-card-item-details">
           {item.item.description}
+          {item.options.map(x => <div>{x}</div>)}
+          {item.optionsClr.map(x => <div>{x}</div>)}
         </div>
         <div className="cart-card-item-options">
           <button className="cart-card-item-option"

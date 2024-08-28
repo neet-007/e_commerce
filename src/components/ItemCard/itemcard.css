@@ -89,6 +89,7 @@
 .page-item-card-title {
 	grid-area: page-item-card-title;
 	width: 100%;
+	height: fit-content;
 }
 
 .page-item-card-price {
@@ -110,7 +111,23 @@
 }
 
 .page-item-card-img-list-item {
-	max-width: 6rem;
+	position: relative;
+	max-width: 3rem;
+	height: auto;
+	cursor: pointer;
+}
+
+.page-item-card-img-list-item>img {
+	max-width: 100%;
+}
+
+.page-item-card-img-list-item-selected {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .page-item-card-options {
@@ -128,6 +145,11 @@
 	align-items: center;
 	padding: 0.75rem;
 	background: none;
+	cursor: pointer;
+}
+
+.page-item-card-option-highlite {
+	border: 2px solid black;
 }
 
 .page-item-card-options-clr {
@@ -135,6 +157,12 @@
 	display: flex;
 	gap: 1rem;
 	width: 100%;
+}
+
+.page-item-card-option-clr {
+	height: 1rem;
+	width: 1rem;
+	border-radius: 50%;
 }
 
 .page-item-card-button {
@@ -160,17 +188,14 @@
 	}
 
 	.page-item-card-container {
+		padding: 2rem;
 		grid-template-columns: 10% 40% 50%;
 		grid-template-areas:
 			"page-item-card-images-list page-item-card-img page-item-card-title"
 			"page-item-card-images-list page-item-card-img page-item-card-price"
 			"page-item-card-images-list . page-item-card-options"
-			"page-item-card-images-list . page-item-card-options"
-			"page-item-card-images-list . page-item-card-options-clr"
 			"page-item-card-images-list . page-item-card-options-clr"
 			". . page-item-card-button"
-			". . page-item-card-description"
-			". . page-item-card-description"
 			". . page-item-card-description"
 		;
 	}

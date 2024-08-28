@@ -1,4 +1,4 @@
-import React, { ComponentProps, useRef, useState } from "react";
+import React, { ComponentProps, useRef } from "react";
 import "./navbar.css"
 import { useLocation, useNavigate } from "@tanstack/react-router";
 
@@ -25,6 +25,7 @@ export const NavbarSearch: React.FC<ComponentProps<"form"> & NavbarSearchProps> 
 		}
 		navigate({
 			to: "/search",
+			//@ts-ignore
 			search: {
 				...search,
 			}

@@ -1,4 +1,4 @@
-import React, { ComponentProps, useRef } from "react";
+import React, { ComponentProps } from "react";
 import "./itemsContainer.css"
 import { Button } from "../Shared/Button";
 import { useLocation, useNavigate, NavigateFn } from "@tanstack/react-router";
@@ -6,53 +6,57 @@ import { useLocation, useNavigate, NavigateFn } from "@tanstack/react-router";
 type ItemsContainerFilterProps = {
 	isFilterOpen: boolean;
 	setIsFilterOpen: React.Dispatch<React.SetStateAction<boolean>>;
-	filtersOptions: Map<string, string[]>
+	filtersOptions: Map<string, [string, boolean][]>
 }
 
 type CheckBoxProps = {
-	item: string;
-	filters: string;
+	item: [string, boolean];
 	navigate: NavigateFn
 	containerName: string
 }
 
 type CheckBoxContainerProps = {
 	containerName: string;
-	items: string[]
-	filters: string;
+	items: [string, boolean][];
 	navigate: NavigateFn
 }
 
 type ButtonsContainer = {
 	containerName: string;
 	buttons: string[];
-	filters: string;
 	navigate: NavigateFn
 }
 
 const CheckBox: React.FC<ComponentProps<"div"> & CheckBoxProps> = ({
-	item, navigate, filters, containerName, ...props }) => {
-	const loaction = useLocation();
+	item, navigate, containerName, ...props }) => {
+	const location = useLocation();
 	return (
 		<div {...props}>
 			<input id={`check-box-${item}-${item}`}
-				type="checkbox" value={item}
+				type="checkbox" value={item[0]}
+				checked={item[1]}
 				onChange={(e) => {
+					const newSearch = { ...location.search }
+					if (newSearch[containerName.toLocaleLowerCase()]) {
+						newSearch[containerName.toLocaleLowerCase()] = newSearch[containerName.toLocaleLowerCase()] + "," + e.target.value.toLocaleLowerCase()
+					}
+					else {
+						newSearch[containerName.toLocaleLowerCase()] = e.target.value.toLocaleLowerCase()
+					}
 					navigate({
 						search: {
-							...loaction.search,
-							[containerName.toLocaleLowerCase()]: e.target.value.toLocaleLowerCase()
+							...newSearch
 						}
 					})
 				}}
 			/>
-			<label htmlFor="">{item}</label>
+			<label htmlFor="">{item[0]}</label>
 		</div>
 	)
 }
 
 const CheckBoxContainer: React.FC<ComponentProps<"div"> & CheckBoxContainerProps> = ({
-	containerName, items, navigate, filters, ...props }) => {
+	containerName, items, navigate, ...props }) => {
 	return (
 		<div className="items-container-filter-checkbox" {...props}>
 			<div>
@@ -63,7 +67,6 @@ const CheckBoxContainer: React.FC<ComponentProps<"div"> & CheckBoxContainerProps
 					<CheckBox key={`checkbox-item${v}-${i}`}
 						item={v}
 						navigate={navigate}
-						filters={filters}
 						containerName={containerName}
 					/>
 				))}
@@ -74,7 +77,7 @@ const CheckBoxContainer: React.FC<ComponentProps<"div"> & CheckBoxContainerProps
 }
 
 const ButtonContainer: React.FC<ComponentProps<"div"> & ButtonsContainer> = ({
-	containerName, buttons, navigate, filters, ...props }) => {
+	containerName, buttons, navigate, ...props }) => {
 	return (
 		<div {...props}>
 			<div>
@@ -95,11 +98,8 @@ const ButtonContainer: React.FC<ComponentProps<"div"> & ButtonsContainer> = ({
 
 export const ItemsContainerFilter: React.FC<ComponentProps<"div"> & ItemsContainerFilterProps> = (
 	{ isFilterOpen, setIsFilterOpen, filtersOptions, ...props }) => {
-	const location = useLocation();
 	const navigate = useNavigate();
 
-	const filters = location.search.filter || ""
-	console.log(filters)
 	return (
 		<div className={`items-container-filter ${isFilterOpen ? "items-container-filter-open" : ""}`} {...props}>
 			<div className="items-container-filter-header">
@@ -112,7 +112,6 @@ export const ItemsContainerFilter: React.FC<ComponentProps<"div"> & ItemsContain
 			{[...filtersOptions].map(([key, value]) => {
 				return <CheckBoxContainer containerName={key}
 					items={value}
-					filters={filters}
 					navigate={navigate}
 				/>
 			})}
@@ -120,8 +119,6 @@ export const ItemsContainerFilter: React.FC<ComponentProps<"div"> & ItemsContain
 				buttons={["35", "43", "44",
 					"14", "41", "53"
 				]}
-
-				filters={filters}
 				navigate={navigate}
 			/>
 			<div className="items-container-filter-slider">

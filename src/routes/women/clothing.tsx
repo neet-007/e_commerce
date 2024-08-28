@@ -4,7 +4,7 @@ import { fetchProducts } from "../../helperFunctions/fetchProducts";
 
 export const Route = createFileRoute("/women/clothing")({
   component: ClothingPage,
-  validateSearch: ({ page, filter, sort }) => {
+  validateSearch: ({ page, filter, sort, ...search }) => {
     let validatedPage = Number(page);
     if (isNaN(validatedPage) || validatedPage <= 0) {
       validatedPage = 1;
@@ -19,10 +19,10 @@ export const Route = createFileRoute("/women/clothing")({
       validatedSort = "none"
     }
 
-    return { page: validatedPage, sort: validatedSort, filter: "none" }
+    return { page: validatedPage, sort: validatedSort, filter: filter || "none", ...search }
   },
-  loaderDeps: ({ search: { page } }) => ({ page: Number(page) }),
-  loader: ({ deps: { page } }) => (fetchProducts(page, "women"))
+  loaderDeps: ({ search: { page, filter, sort, ...search } }) => ({ page: Number(page), ...search }),
+  loader: ({ deps: { page, ...search } }) => (fetchProducts(page, "women", search))
 })
 
 function ClothingPage() {

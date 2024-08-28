@@ -4,7 +4,7 @@ type ReturnType = {
 	results: ItemType[];
 	page: number;
 	carousel: ItemType[];
-	filters: Map<string, string[]>
+	filters: Map<string, [string, boolean][]>
 };
 
 export async function fetchProducts(
@@ -40,12 +40,12 @@ export async function fetchProducts(
 	if (searchParams && Object.keys(searchParams).length) {
 		const filteredResults = [] as ItemType[];
 		Object.entries(searchParams).forEach(([key, value]) => {
-			let filterName = paginatedResults.find(x => x.optionsSelector.name.toLocaleLowerCase() === key);
-			if (filterName !== undefined) {
-				for (let i = 0; i < paginatedResults.length; i++) {
-					if (paginatedResults[i].optionsSelector.name.toLocaleLowerCase() === key &&
-						paginatedResults[i].optionsSelector.options.map(x => x.toLocaleLowerCase()).includes(value)) {
-						filteredResults.push(paginatedResults[i])
+			const filterOptions = value.split(",")
+			for (let i = 0; i < filterOptions.length; i++) {
+				for (let j = 0; j < paginatedResults.length; j++) {
+					if (paginatedResults[j].optionsSelector.name.toLocaleLowerCase() === key &&
+						paginatedResults[j].optionsSelector.options.map(x => x.toLocaleLowerCase()).includes(filterOptions[i])) {
+						filteredResults.push(paginatedResults[j])
 					}
 				}
 			}
@@ -54,20 +54,30 @@ export async function fetchProducts(
 		paginatedResults = filteredResults
 	}
 
-	const filters = paginatedResults.reduce((prev: Map<string, string[]>, curr) => {
-		const key = curr.optionsSelector.name;
+	const filters = paginatedResults.reduce((prev: Map<string, [string, boolean][]>, curr) => {
+		const key = curr.optionsSelector.name.toLowerCase();
 
-		if (prev.has(key)) {
-			const existingOptions = prev.get(key) || [];
-			const newOptions = [...existingOptions, ...curr.optionsSelector.options];
-			const uniqueOptions = Array.from(new Set(newOptions));
-			prev.set(key, uniqueOptions);
-		} else {
-			prev.set(key, curr.optionsSelector.options);
-		}
+		const existingOptions = prev.get(key) || [];
+
+		const existingOptionsMap = new Map(existingOptions);
+
+		const updatedOptions = curr.optionsSelector.options.map(option => {
+			const lowerOption = option.toLowerCase();
+			if (searchParams && Object.keys(searchParams).length && searchParams[key]) {
+				return [option, searchParams[key].split(",").includes(lowerOption) || false] as [string, boolean];
+			}
+			return [option, false] as [string, boolean]
+		});
+
+		const combinedOptions = new Map<string, boolean>([
+			...existingOptionsMap,
+			...updatedOptions
+		]);
+
+		prev.set(key, Array.from(combinedOptions.entries()));
 
 		return prev;
-	}, new Map<string, string[]>());
+	}, new Map<string, [string, boolean][]>());
 
 	return {
 		results: paginatedResults,

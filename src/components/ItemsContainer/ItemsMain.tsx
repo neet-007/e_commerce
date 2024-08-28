@@ -9,7 +9,7 @@ type ItemsMainProps = {
 	data: {
 		results: ItemType[];
 		page: number;
-		filters: Map<string, string[]>
+		filters: Map<string, [string, boolean][]>
 	}
 }
 

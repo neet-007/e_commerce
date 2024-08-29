@@ -3,9 +3,12 @@ import { ItemType } from "../components/ItemCard/ItemCard";
 type ReturnType = {
 	results: ItemType[];
 	page: number;
+	count: number;
+	prevPage: boolean;
+	nextPage: boolean;
 	carousel: ItemType[];
-	filters: Map<string, [string, boolean][]>
-	colors: [string, boolean][]
+	filters: Map<string, [string, boolean][]>;
+	colors: [string, boolean][];
 };
 
 export async function fetchSearch(
@@ -13,42 +16,41 @@ export async function fetchSearch(
 	page: number,
 	searchParams?: Record<string, string>
 ): Promise<ReturnType> {
-	let data;
+	let data: ItemType[];
 
 	data = (await import("../api/menProducts.json")).default;
-	data = data.filter(x => x.title.toLocaleLowerCase().includes(title));
 
-	const itemsPerPage = 20;
-	const skip = page * itemsPerPage;
-	let paginatedResults: ItemType[];
-	if (data.length < itemsPerPage) {
-		paginatedResults = data
-	} else {
-		paginatedResults = data.slice(skip, skip + itemsPerPage) as ItemType[];
-	}
 
-	console.log(paginatedResults)
-	console.log(searchParams)
 	if (searchParams && Object.keys(searchParams).length) {
 		const filteredResults = [] as ItemType[];
 		Object.entries(searchParams).forEach(([key, value]) => {
 			const filterOptions = value.split(",")
 			for (let i = 0; i < filterOptions.length; i++) {
-				for (let j = 0; j < paginatedResults.length; j++) {
+				for (let j = 0; j < data.length; j++) {
 					if (key === "color") {
-						if (paginatedResults[j].optionsSelectorClr.map(x => x.toLocaleLowerCase().includes(filterOptions[i]))) {
-							filteredResults.push(paginatedResults[j])
+						if (data[j].optionsSelectorClr.map(x => x.toLocaleLowerCase().includes(filterOptions[i]))) {
+							filteredResults.push(data[j])
 						}
 					}
-					else if (paginatedResults[j].optionsSelector.name.toLocaleLowerCase() === key &&
-						paginatedResults[j].optionsSelector.options.map(x => x.toLocaleLowerCase()).includes(filterOptions[i])) {
-						filteredResults.push(paginatedResults[j])
+					else if (data[j].optionsSelector.name.toLocaleLowerCase() === key &&
+						data[j].optionsSelector.options.map(x => x.toLocaleLowerCase()).includes(filterOptions[i])) {
+						filteredResults.push(data[j])
 					}
 				}
 			}
 		})
-		console.log(filteredResults)
-		paginatedResults = Array.from(new Set(filteredResults))
+		data = Array.from(new Set(filteredResults))
+	}
+
+	data = data.filter(x => x.title.toLocaleLowerCase().includes(title));
+
+	const itemsPerPage = 20;
+	const skip = (page - 1) * itemsPerPage;
+	let paginatedResults: ItemType[];
+	if (data.length < itemsPerPage) {
+		paginatedResults = data
+	} else {
+		paginatedResults = data.slice(skip, skip + itemsPerPage) as ItemType[];
 	}
 
 	const filters = paginatedResults.reduce((prev: Map<string, [string, boolean][]>, curr) => {
@@ -93,6 +95,9 @@ export async function fetchSearch(
 	return {
 		results: paginatedResults,
 		page,
+		count: data.length,
+		prevPage: page > 1,
+		nextPage: skip < data.length - 1,
 		carousel: [],
 		filters,
 		colors

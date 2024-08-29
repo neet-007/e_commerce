@@ -9,6 +9,9 @@ type ItemsMainProps = {
 	data: {
 		results: ItemType[];
 		page: number;
+		count: number;
+		prevPage: boolean;
+		nextPage: boolean;
 		filters: Map<string, [string, boolean][]>
 		colors: [string, boolean][]
 	}
@@ -26,8 +29,14 @@ export const ItemsMain: React.FC<ComponentProps<"div"> & ItemsMainProps> = ({
 				filtersOptions={data.filters}
 				colors={data.colors}
 			/>
-			<ItemsContainerBar setIsFilterOpen={setIsFilterOpen} />
-			<ItemsContainer results={data.results} />
+			<ItemsContainerBar setIsFilterOpen={setIsFilterOpen}
+				count={data.count}
+			/>
+			<ItemsContainer results={data.results}
+				page={data.page}
+				prevPage={data.prevPage}
+				nextPage={data.nextPage}
+			/>
 		</div>
 	)
 

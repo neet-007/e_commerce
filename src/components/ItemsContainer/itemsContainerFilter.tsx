@@ -60,7 +60,8 @@ function onClick(v: [string, boolean], searchVal: string, newSearch, navigate: N
 	}
 	navigate({
 		search: {
-			...newSearch
+			...newSearch,
+			page: 1
 		}
 	})
 }

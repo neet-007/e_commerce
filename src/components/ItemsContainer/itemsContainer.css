@@ -11,10 +11,23 @@
 }
 
 .items-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	grid-area: item-container;
+}
+
+.items-container-items {
 	display: grid;
 	grid-template-columns: repeat(1, 1fr);
 	gap: 1rem;
-	grid-area: item-container;
+}
+
+.items-container-buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
 }
 
 .items-container-bar {
@@ -103,14 +116,14 @@
 }
 
 @media only screen and (min-width: 774px) and (max-width:929px) {
-	.items-container {
+	.items-container-items {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
 }
 
 @media only screen and (min-width:930px) {
-	.items-container {
+	.items-container-items {
 		grid-template-columns: repeat(3, 1fr);
 	}
 

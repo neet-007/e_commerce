@@ -105,6 +105,39 @@
 	cursor: pointer;
 }
 
+.cart-card-item-delete-all-options {
+	display: flex;
+	position: relative;
+	gap: -1rem;
+}
+
+.cart-card-item-delete-all-first-trash {
+	z-index: 3;
+}
+
+.cart-card-item-delete-all-second-trash {
+	position: absolute;
+	transform: translateX(50%);
+	z-index: 2;
+}
+
+.cart-card-item-delete-all-third-trash {
+	position: absolute;
+	transform: translateX(100%);
+	z-index: 1;
+}
+
+.cart-card-item-clr-contaier {
+	display: flex;
+	gap: 0.2rem;
+}
+
+.cart-card-item-clr {
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+}
+
 .cart-summery {
 	display: flex;
 	flex-direction: column;

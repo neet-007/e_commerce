@@ -56,7 +56,9 @@ export const PageItemCard: React.FC<ComponentProps<"div"> & PageItemCardProps> =
 								"page-item-card-option-highlite"
 								: ""}
 							`}
-						onClick={() => setOptions([v])}>
+						onClick={() => {
+							setOptions([v])
+						}}>
 						{v}
 					</button>
 				))}
@@ -68,7 +70,9 @@ export const PageItemCard: React.FC<ComponentProps<"div"> & PageItemCardProps> =
 							  ${v === optionsClr[0] ?
 								"page-item-card-option-highlite"
 								: ""}`}
-						onClick={() => setOptionsClr([v])}>
+						onClick={() => {
+							setOptionsClr([v])
+						}}>
 						<div className="page-item-card-option-clr"
 							style={{ backgroundColor: v }}>
 						</div>
@@ -78,7 +82,10 @@ export const PageItemCard: React.FC<ComponentProps<"div"> & PageItemCardProps> =
 			</div>
 			<Button variant="primary" size="md" roundedCorners
 				className="page-item-card-button"
-				onClick={() => addItem({ ...item }, options, optionsClr)}
+				dontHighlight
+				onClick={() => {
+					addItem({ ...item }, options, optionsClr)
+				}}
 				disabled={options.length === 0 || optionsClr.length === 0}
 				pill
 			>

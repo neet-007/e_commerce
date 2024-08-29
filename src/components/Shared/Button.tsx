@@ -8,11 +8,13 @@ type ButtonProps = {
 	round?: boolean
 	highlight?: boolean
 	pill?: boolean
+	dontHighlight?: boolean
 }
 
 
 export const Button: React.FC<ComponentProps<"button"> & ButtonProps> = ({ variant, size,
-	round, roundedCorners, className, onClick, highlight, pill, children, ...props }) => {
+	round, roundedCorners, className, onClick, highlight, pill, dontHighlight,
+	children, ...props }) => {
 	const [clicked, setClicked] = useState<boolean>(highlight || false);
 	return (
 		<button
@@ -24,7 +26,7 @@ export const Button: React.FC<ComponentProps<"button"> & ButtonProps> = ({ varia
 					`${size}-button-round`}
 		    ${className}`}
 			onClick={(e) => {
-				setClicked(prev => !prev);
+				dontHighlight ? undefined : setClicked(prev => !prev);
 				onClick ? onClick(e) : undefined
 			}}
 			{...props}>

@@ -81,7 +81,6 @@
 		"page-item-card-images-list"
 		"page-item-card-options"
 		"page-item-card-options-clr"
-		"page-item-card-button"
 		"page-item-card-description"
 	;
 }
@@ -168,6 +167,8 @@
 .page-item-card-button {
 	grid-area: page-item-card-button;
 	width: 100%;
+	position: fixed;
+	bottom: 0;
 }
 
 .page-item-card-description {
@@ -175,7 +176,7 @@
 	width: 100%;
 }
 
-@media only screen and (min-width: 774px) {
+@media only screen and (min-width: 874px) {
 	.item-card-container {
 		grid-template-columns: 1fr;
 		grid-template-areas:
@@ -189,14 +190,15 @@
 
 	.page-item-card-container {
 		padding: 2rem;
+		grid-template-rows: auto auto auto auto auto auto;
 		grid-template-columns: 10% 40% 50%;
 		grid-template-areas:
 			"page-item-card-images-list page-item-card-img page-item-card-title"
-			"page-item-card-images-list page-item-card-img page-item-card-price"
+			"page-item-card-images-list page-item-card-img page-item-card-description"
+			"page-item-card-images-list page-item-card-img ."
 			"page-item-card-images-list . page-item-card-options"
 			"page-item-card-images-list . page-item-card-options-clr"
 			". . page-item-card-button"
-			". . page-item-card-description"
 		;
 	}
 
@@ -205,4 +207,10 @@
 		flex-direction: column;
 	}
 
+	.page-item-card-button {
+		grid-area: page-item-card-button;
+		width: 100%;
+		position: initial;
+		bottom: initial;
+	}
 }

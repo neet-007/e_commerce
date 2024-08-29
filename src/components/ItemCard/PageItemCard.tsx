@@ -25,12 +25,14 @@ export const PageItemCard: React.FC<ComponentProps<"div"> & PageItemCardProps> =
 	console.log(optionsClr)
 	return (
 		<div className="page-item-card-container" {...props}>
-			<div className="page-item-card-title h3">
-				{item.title}
-			</div>
-			<div className="page-item-card-price">
-				<span>{item.price.currency}</span>
-				<span>{item.price.amount}</span>
+			<div className="page-item-card-title">
+				<div className="h3">
+					{item.title}
+				</div>
+				<div className="page-item-card-price">
+					<span>{item.price.currency}</span>
+					<span>{item.price.amount}</span>
+				</div>
 			</div>
 			<img src={imgsSrcs[imgSrc]} alt=""
 				className="page-item-card-img" />
@@ -82,7 +84,14 @@ export const PageItemCard: React.FC<ComponentProps<"div"> & PageItemCardProps> =
 				add to cart
 			</Button>
 			<div className="page-item-card-description">
-				{item.description}
+				<p>dsajdksaljdklsajdksdjsakldjasdlkjdkaldjsalkdjsakdjaskljd</p>
+				<p>dsajdksaljdklsajdksdjsakldjasdlkjdkaldjsalkdjsakdjaskljd</p>
+				<p>dsajdksaljdklsajdksdjsakldjasdlkjdkaldjsalkdjsakdjaskljd</p>
+				<p>dsajdksaljdklsajdksdjsakldjasdlkjdkaldjsalkdjsakdjaskljd</p>
+				<p>dsajdksaljdklsajdksdjsakldjasdlkjdkaldjsalkdjsakdjaskljd</p>
+				<p>dsajdksaljdklsajdksdjsakldjasdlkjdkaldjsalkdjsakdjaskljd</p>
+				<p>dsajdksaljdklsajdksdjsakldjasdlkjdkaldjsalkdjsakdjaskljd</p>
+				<p>dsajdksaljdklsajdksdjsakldjasdlkjdkaldjsalkdjsakdjaskljd</p>
 			</div>
 		</div>
 	)

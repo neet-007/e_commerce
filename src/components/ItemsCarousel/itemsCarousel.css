@@ -41,6 +41,7 @@
 .items-carousel-item-card-container {
 	display: flex;
 	flex-direction: column;
+	gap: 0.25rem;
 }
 
 .items-carousel-item-card-img {
@@ -48,7 +49,3 @@
 	height: auto;
 	cursor: pointer;
 }
-
-.items-carousel-item-card-container {}
-
-.items-carousel-item-card-container {}

@@ -80,6 +80,7 @@ export const PageItemCard: React.FC<ComponentProps<"div"> & PageItemCardProps> =
 				className="page-item-card-button"
 				onClick={() => addItem({ ...item }, options, optionsClr)}
 				disabled={options.length === 0 || optionsClr.length === 0}
+				pill
 			>
 				add to cart
 			</Button>

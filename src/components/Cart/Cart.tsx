@@ -63,7 +63,9 @@ export const Cart: React.FC<ComponentProps<"div"> & CartProps> = ({ ...props }) 
           <input type="text" />
         </div>
         <Button className="cart-summery-button" variant="primary" size="md" roundedCorners
-          disabled={count === 0}>
+          disabled={count === 0}
+          pill
+        >
           checkout
         </Button>
       </div>

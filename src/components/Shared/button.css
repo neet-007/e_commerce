@@ -1,10 +1,18 @@
 .button-class {
 	border: 1px solid black;
 	cursor: pointer;
+	transition: background-color 100ms ease-in-out;
+	text-transform: capitalize;
 }
+
+.button-class:disabled {}
 
 .border-radius-button {
 	border-radius: 0.60rem;
+}
+
+.button-pill {
+	border-radius: 4rem;
 }
 
 .sm-button-round {
@@ -32,4 +40,51 @@
 .lg-button {
 	padding: 2rem 2.25rem;
 	font-size: 1.3em;
+}
+
+.primary-button:hover,
+.primary-button-highlight {
+	background-color: var(--secondary-clr);
+	color: var(--primary-clr);
+}
+
+.primary-button:disabled {
+	background-color: var(--disabled-clr);
+	color: var(--primary-clr);
+	cursor: not-allowed;
+}
+
+.secondary-button:hover,
+.secondary-button-highlight {
+	background-color: var(--primary-clr);
+	color: var(--secondary-clr);
+}
+
+.secondary-button:disabled {
+	background-color: var(--disabled-clr);
+	color: var(--primary-clr);
+	cursor: not-allowed;
+}
+
+.success-button:hover,
+.success-button-highlight {
+	background-color: var(--success-clr-hover);
+	color: var(--primary-clr);
+}
+
+.success-button:disabled {
+	background-color: var(--disabled-clr);
+	color: var(--primary-clr);
+	cursor: not-allowed;
+}
+
+.warning-button:hover,
+.warning-button-highlight {
+	background-color: var(--warning-clr-hover);
+}
+
+.warning-button:disabled {
+	background-color: var(--disabled-clr);
+	color: var(--primary-clr);
+	cursor: not-allowed;
 }

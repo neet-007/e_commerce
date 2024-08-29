@@ -114,7 +114,8 @@ const ButtonContainer: React.FC<ComponentProps<"div"> & ButtonsContainer> = ({
 				{buttons.map((v, i) => (
 					<Button key={`button-contier-button-${v[0]}-${i}`}
 						size="sm" roundedCorners
-						variant="primary"
+						variant="secondary"
+						highlight={v[1]}
 						onClick={() => onClick(v, containerName.toLocaleLowerCase(), location.search, navigate)}
 					>
 						{v[0]}
@@ -163,7 +164,15 @@ export const ItemsContainerFilter: React.FC<ComponentProps<"div"> & ItemsContain
 							style={{ backgroundColor: v[0] }}>
 							{v[1] &&
 								<div className="items-container-filter-color-check">
-									a
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										fill="currentColor"
+										viewBox="0 0 16 16"
+									>
+										<path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z" />
+									</svg>
 								</div>
 							}
 						</div>
@@ -174,6 +183,13 @@ export const ItemsContainerFilter: React.FC<ComponentProps<"div"> & ItemsContain
 			</div>
 			<div className="items-container-filter-slider">
 				slider
+				<p>dsaddd</p>
+				<p>dsaddd</p>
+				<p>dsaddd</p>
+				<p>dsaddd</p>
+			</div>
+			<div className="items-container-filter-margin">
+
 			</div>
 		</div>
 	)

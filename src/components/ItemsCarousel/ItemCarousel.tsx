@@ -36,7 +36,7 @@ export const ItemsCarousel: React.FC<ComponentProps<"div"> & ItemsCarouselProps>
 	return (
 		<div className="items-carousel-container" {...props}>
 			<div className="items-carousel-header">
-				<div className="items-carousel-title">
+				<div className="items-carousel-title h3">
 					titel
 				</div>
 				<div className="items-carousel-control">

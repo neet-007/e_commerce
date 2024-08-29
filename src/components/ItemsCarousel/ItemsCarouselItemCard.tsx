@@ -25,7 +25,7 @@ export const ItemsCarouselItemCard: React.FC<ComponentProps<"div"> & ItemsCarous
 			<div className="itmes-carousel-item-card-category">
 				{item.title}
 			</div>
-			<div className="itmes-carousel-item-card-price">
+			<div className="itmes-carousel-item-card-price h4">
 				<span>{item.price.amount}</span>
 				<span>{item.price.currency}</span>
 			</div>

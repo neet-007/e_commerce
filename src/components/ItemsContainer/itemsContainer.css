@@ -98,6 +98,10 @@
 	gap: 0.25rem;
 }
 
+.items-container-filter-margin {
+	margin-top: 100%;
+}
+
 @media only screen and (min-width: 774px) and (max-width:929px) {
 	.items-container {
 		grid-template-columns: repeat(2, 1fr);

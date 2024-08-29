@@ -29,7 +29,7 @@ export const PageItemCard: React.FC<ComponentProps<"div"> & PageItemCardProps> =
 				<div className="h3">
 					{item.title}
 				</div>
-				<div className="page-item-card-price">
+				<div className="page-item-card-price h4">
 					<span>{item.price.currency}</span>
 					<span>{item.price.amount}</span>
 				</div>

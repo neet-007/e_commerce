@@ -27,7 +27,7 @@ export const CartItemCard: React.FC<ComponentProps<"div"> & CartItemCardProps> =
           <div className="cart-card-item-price">
             {item.item.title}
           </div>
-          <div className="cart-card-item-price">
+          <div className="cart-card-item-price h4">
             <span>{item.price}</span>
             <span>{item.item.price.currency}</span>
           </div>

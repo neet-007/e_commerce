@@ -33,7 +33,7 @@
 .items-container-bar {
 	display: flex;
 	position: sticky;
-	top: 8%;
+	top: 6.5%;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0.5rem 1rem;
@@ -46,21 +46,24 @@
 	display: none;
 	flex-direction: column;
 	gap: 1rem;
-	overflow-y: scroll;
 	grid-area: items-container-filter;
+	position: sticky;
+	top: 10%;
+	bottom: 0;
+	min-height: 100vh;
+	overflow-y: scroll;
 }
 
 .items-container-filter-open {
 	display: flex;
 	position: fixed;
-	top: 0;
-	bottom: 0;
+	top: 10%;
 	left: 0;
 	right: 0;
+	bottom: 0;
+	overflow-y: scroll;
 	background-color: white;
 	z-index: 100000;
-	overflow-y: scroll;
-	padding: 2rem;
 }
 
 .items-container-filter-header {
@@ -70,7 +73,7 @@
 
 .items-container-filter-colors {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(2, 1fr);
 	place-self: center;
 	width: 100%;
 	gap: 1rem;
@@ -115,18 +118,24 @@
 	margin-top: 100%;
 }
 
-@media only screen and (min-width: 774px) and (max-width:929px) {
+@media only screen and (min-width: 850px) {
 	.items-container-items {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-}
-
-@media only screen and (min-width:930px) {
-	.items-container-items {
-		grid-template-columns: repeat(3, 1fr);
+	.items-container-filter-open {
+		display: flex;
+		position: sticky;
+		top: 10%;
+		bottom: 0;
+		width: 100%;
+		z-index: initial;
+		overflow-y: initial;
 	}
 
+}
+
+@media only screen and (min-width:1000px) {
 	.items-main {
 		display: grid;
 		grid-template-columns: 20% 80%;
@@ -140,21 +149,18 @@
 
 	.items-container-filter {
 		display: flex;
-		position: fixed;
-		width: 20%;
-		overflow-y: scroll;
-		height: 100%;
+		position: sticky;
+		top: 10%;
+		bottom: 0;
+		width: 100%;
 	}
 
 	.items-container-filter-open {
 		display: flex;
-		position: fixed;
-		top: auto;
-		left: auto;
-		bottom: auto;
-		right: auto;
-		width: 20%;
-		padding: 0;
+		position: sticky;
+		top: 10%;
+		bottom: 0;
+		width: 100%;
 	}
 
 	.items-container-filter-header {

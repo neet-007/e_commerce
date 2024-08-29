@@ -62,7 +62,6 @@
 	display: flex;
 	flex-direction: column;
 	list-style: none;
-	padding: 0rem 2rem;
 	position: absolute;
 	right: -100%;
 	top: 150%;

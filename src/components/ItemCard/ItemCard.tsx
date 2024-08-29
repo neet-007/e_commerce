@@ -65,7 +65,7 @@ export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({
 				{item.description}
 			</div>
 			<div className="item-card-footer">
-				<div className="item-card-footer-item">
+				<div className="item-card-footer-item h4">
 					<span>{item.price.amount}</span>
 					<span>{item.price.currency}</span>
 				</div>

@@ -84,3 +84,49 @@
 .cursor-pointer {
 	cursor: pointer;
 }
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.link-none {
+	color: initial;
+	background-color: initial;
+}
+
+.list-none {
+	list-style: none;
+	padding: 0;
+}
+
+.hompage-container {
+	display: flex;
+	flex-direction: column;
+	gap: 5rem;
+}
+
+.hompage-hero {
+	width: 100%;
+}
+
+.hompage-hero>img {
+	max-width: 100%;
+	object-fit: cover;
+}
+
+.hompage-slogan {
+	font-size: 5rem;
+	font-weight: bold;
+	place-self: center;
+}
+
+.hompage-discount {
+	width: 100%;
+}
+
+.hompage-discount>img {
+	max-width: 100%;
+	object-fit: cover;
+}
+
+.hompage-carousel {}

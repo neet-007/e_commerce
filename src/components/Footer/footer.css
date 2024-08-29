@@ -1,0 +1,96 @@
+.footer-container {
+	display: grid;
+	grid-template-areas:
+		"footer-email"
+		"footer-help"
+		"footer-about"
+		"footer-social-media"
+		"footer-terms"
+	;
+	background-color: black;
+	color: white;
+}
+
+.footer-container>* {
+	padding: 1rem;
+}
+
+.footer-section-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer-email {
+	grid-area: footer-email;
+}
+
+.footer-help {
+	grid-area: footer-help;
+}
+
+.footer-help-list {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 200ms ease-in-out;
+}
+
+.footer-about {
+	grid-area: footer-about;
+}
+
+.footer-about-list {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 200ms ease-in-out;
+}
+
+.footer-social-media {
+	grid-area: footer-social-media;
+	display: flex;
+	gap: 1rem;
+}
+
+.footer-social-media>* {
+	cursor: pointer;
+}
+
+.footer-terms {
+	grid-area: footer-terms;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 200ms ease-in-out;
+}
+
+.footer-list-open {
+	max-height: max-content;
+	overflow: initial;
+}
+
+@media only screen and (min-width: 900px) {
+	.footer-container {
+		grid-template-areas:
+			"footer-email footer-help footer-about footer-social-media"
+			"footer-terms . . .";
+	}
+
+	.footer-help-list {
+		max-height: max-content;
+		overflow: initial;
+	}
+
+	.footer-about-list {
+		max-height: max-content;
+		overflow: initial;
+	}
+
+	.footer-terms {
+		max-height: max-content;
+		overflow: initial;
+	}
+
+	.footer-open-icon {
+		display: none;
+	}
+
+}

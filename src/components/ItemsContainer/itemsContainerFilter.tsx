@@ -85,12 +85,12 @@ const CheckBoxContainer: React.FC<ComponentProps<"div"> & CheckBoxContainerProps
 	containerName, items, navigate, location, ...props }) => {
 	return (
 		<div className="items-container-filter-checkbox" {...props}>
-			<div>
+			<div className="h4">
 				{containerName}
 			</div>
 			<div>
 				{items.map((v, i) => (
-					<CheckBox key={`checkbox-item${v}-${i}`}
+					<CheckBox key={`checkbox-item${v[0]}-${i}`}
 						item={v}
 						navigate={navigate}
 						location={location}
@@ -108,7 +108,7 @@ const ButtonContainer: React.FC<ComponentProps<"div"> & ButtonsContainer> = ({
 
 	return (
 		<div {...props}>
-			<div>
+			<div className="h4">
 				{containerName}
 			</div>
 			<div className="items-container-filter-picker">
@@ -141,15 +141,19 @@ export const ItemsContainerFilter: React.FC<ComponentProps<"div"> & ItemsContain
 					X
 				</button>
 			</div>
-			{[...filtersOptions].map(([key, value]) => {
+			{[...filtersOptions].map(([key, value], i) => {
 				if (key === "size") {
-					return <ButtonContainer containerName={key}
+					return <ButtonContainer
+						key={`checkbox-containers-${key}-${i}`}
+						containerName={key}
 						buttons={value}
 						navigate={navigate}
 						location={location}
 					/>
 				}
-				return <CheckBoxContainer containerName={key}
+				return <CheckBoxContainer
+					key={`checkbox-containers-${key}-${i}`}
+					containerName={key}
 					items={value}
 					navigate={navigate}
 					location={location}
@@ -183,11 +187,6 @@ export const ItemsContainerFilter: React.FC<ComponentProps<"div"> & ItemsContain
 				}
 			</div>
 			<div className="items-container-filter-slider">
-				slider
-				<p>dsaddd</p>
-				<p>dsaddd</p>
-				<p>dsaddd</p>
-				<p>dsaddd</p>
 			</div>
 			<div className="items-container-filter-margin">
 

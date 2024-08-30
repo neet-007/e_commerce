@@ -23,6 +23,7 @@
 
 .footer-email {
 	grid-area: footer-email;
+	cursor: pointer;
 }
 
 .footer-help {
@@ -35,6 +36,10 @@
 	transition: max-height 200ms ease-in-out;
 }
 
+.footer-help-list>* {
+	cursor: pointer;
+}
+
 .footer-about {
 	grid-area: footer-about;
 }
@@ -43,6 +48,10 @@
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 200ms ease-in-out;
+}
+
+.footer-about-list>* {
+	cursor: pointer;
 }
 
 .footer-social-media {
@@ -60,6 +69,10 @@
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 200ms ease-in-out;
+}
+
+.footer-terms>* {
+	cursor: pointer;
 }
 
 .footer-list-open {

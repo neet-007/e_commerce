@@ -123,15 +123,6 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	.items-container-filter-open {
-		display: flex;
-		position: sticky;
-		top: 10%;
-		bottom: 0;
-		width: 100%;
-		z-index: initial;
-		overflow-y: initial;
-	}
 
 }
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Varela+Round&display=swap');
+
 :root {
 	--primary-clr: #000814;
 	--secondary-clr: #f8f9fa;
@@ -8,6 +10,15 @@
 	--disabled-clr: #e5e5e5;
 	box-sizing: border-box;
 	text-transform: capitalize;
+	font-family: "Varela Round", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.main-route {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
 }
 
 .primary-color {
@@ -106,7 +117,7 @@
 }
 
 .hompage-hero {
-	width: 100%;
+	place-self: center;
 }
 
 .hompage-hero>img {
@@ -118,6 +129,9 @@
 	font-size: 5rem;
 	font-weight: bold;
 	place-self: center;
+	font-family: "Rubik", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
 }
 
 .hompage-discount {

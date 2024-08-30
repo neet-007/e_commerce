@@ -1,5 +1,6 @@
-import React, { useState, useContext, createContext } from "react";
+import React, { useState, useContext, createContext, useEffect } from "react";
 import { ItemType } from "../components/ItemCard/ItemCard"
+import { useCartLocalStorage } from "../hooks/useCartLocalStorage";
 
 export type CartItemType = { item: ItemType, quantity: number, price: number, options: string[], optionsClr: string[] };
 
@@ -63,11 +64,32 @@ function arrayDeepEquality(arr1: any[], arr2: any[]) {
 const CartContext = createContext<CartContextType>(INITIAL_STATE);
 
 export const CartContextProvider: React.FC<React.ComponentProps<"div">> = ({ children }) => {
-  const [cartItems, setCartItems] = useState<CartItemType[]>([]);
+  const { setCart, getCart } = useCartLocalStorage();
+  const prevCart = getCart();
+  const [cartItems, setCartItems] = useState<CartItemType[]>(prevCart ? prevCart : []);
   const [count, setCount] = useState<number>(0);
   const [total, setTotal] = useState<number>(0);
 
+  useEffect(() => {
+    const prevCart_ = getCart();
+    let total_ = 0;
+    let count_ = 0;
+    console.log(prevCart_)
+    if (prevCart) {
+      total_ = prevCart_.reduce((prev: number, curr: CartItemType) => {
+        return parseFloat((prev + curr.price).toFixed(2));
+      }, 0);
+      count_ = prevCart_.reduce((prev: number, curr: CartItemType) => {
+        return prev + curr.quantity
+      }, 0)
+      setCartItems(prevCart_)
+      setCount(count_)
+      setTotal(total_)
+    }
+  }, [])
+
   function addItem(item: ItemType, options: string[], optionsClr: string[]) {
+    let newCart: CartItemType[] = [];
     setCartItems(prev => {
       if (!prev.find(x => x.item.itemId === item.itemId &&
         arrayDeepEquality(x.options, options) &&
@@ -79,21 +101,25 @@ export const CartContextProvider: React.FC<React.ComponentProps<"div">> = ({ chi
           options,
           optionsClr
         })
-        return [...prev]
+        newCart = [...prev]
+        return newCart
       }
-      return prev.map(x => x.item.itemId === item.itemId &&
+      newCart = prev.map(x => x.item.itemId === item.itemId &&
         arrayDeepEquality(x.options, options) &&
         arrayDeepEquality(x.optionsClr, optionsClr) ?
         { ...x, quantity: x.quantity + 1, price: x.price + item.price.amount }
         : x)
+      return [...newCart]
     });
     setCount(prev => prev + 1);
-    setTotal(prev => prev + item.price.amount);
+    setTotal(prev => parseFloat((prev + item.price.amount).toFixed(2)));
+    setCart(newCart);
   }
 
   function removeSingleItem(id: number, options: string[], optionsClr: string[]) {
+    let newCart: CartItemType[] = [];
     setCartItems(prev => {
-      return prev.map(x => {
+      newCart = prev.map(x => {
         const optionsEqual = arrayDeepEquality(x.options, options)
         const optionsClrEqual = arrayDeepEquality(x.optionsClr, optionsClr)
         if (x.item.itemId === id && optionsEqual && optionsClrEqual) {
@@ -110,15 +136,19 @@ export const CartContextProvider: React.FC<React.ComponentProps<"div">> = ({ chi
         }
         return x
       }).filter(x => x != null)
+
+      return [...newCart]
     })
+    setCart(newCart);
     setCount(prev => Math.max(prev - 1, 0));
   }
 
   function removeItem(id: number, options: string[], optionsClr: string[]) {
     let quantity = 0;
     let price = 0;
+    let newCart: CartItemType[] = [];
     setCartItems(prev => {
-      const updatedItems = prev.filter(x => {
+      newCart = prev.filter(x => {
         const optionsEqual = arrayDeepEquality(x.options, options);
         const optionsClrEqual = arrayDeepEquality(x.optionsClr, optionsClr);
 
@@ -131,11 +161,10 @@ export const CartContextProvider: React.FC<React.ComponentProps<"div">> = ({ chi
         return true;
       });
 
-      console.log(price)
-      console.log(quantity)
-      return updatedItems;
+      return [...newCart]
     });
 
+    setCart(newCart);
     setTotal(prevTotal => Math.max(parseFloat((prevTotal - price).toFixed(2)), 0));
     setCount(prevCount => Math.max((prevCount - quantity), 0));
   }

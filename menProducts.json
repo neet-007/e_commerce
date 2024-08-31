@@ -1,0 +1,1802 @@
+[
+  {
+    "itemId": 1,
+    "title": "Men's Classic T-Shirt",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Red",
+      "Blue",
+      "Black"
+    ],
+    "description": "A classic t-shirt made from 100% cotton.",
+    "price": {
+      "amount": 19.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 2,
+    "title": "Women's V-Neck Top",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Pink",
+      "Green",
+      "Gray",
+      "Black"
+    ],
+    "description": "A stylish v-neck top perfect for any occasion.",
+    "price": {
+      "amount": 24.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 3,
+    "title": "Men's Slim Fit Jeans",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "28",
+        "30",
+        "32",
+        "34"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Dark Blue",
+      "Light Blue",
+      "Black"
+    ],
+    "description": "Comfortable slim fit jeans with a modern look.",
+    "price": {
+      "amount": 39.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 4,
+    "title": "Women's Flared Skirt",
+    "optionsSelector": {
+      "name": "Variation",
+      "options": [
+        "Solid",
+        "Striped",
+        "Printed"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Red",
+      "Black",
+      "Navy",
+      "Beige"
+    ],
+    "description": "A stylish flared skirt for a feminine touch.",
+    "price": {
+      "amount": 29.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 5,
+    "title": "Men's Casual Jacket",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Denim",
+        "Leather",
+        "Fleece"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Gray",
+      "Brown"
+    ],
+    "description": "A versatile jacket for casual wear.",
+    "price": {
+      "amount": 59.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 6,
+    "title": "Women's Sleeveless Dress",
+    "optionsSelector": {
+      "name": "Category",
+      "options": [
+        "Casual",
+        "Formal",
+        "Party"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Red",
+      "Blue",
+      "Green",
+      "Black"
+    ],
+    "description": "A chic sleeveless dress for warm weather.",
+    "price": {
+      "amount": 34.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 7,
+    "title": "Men's Cargo Shorts",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "32",
+        "34",
+        "36",
+        "38"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Khaki",
+      "Olive",
+      "Navy"
+    ],
+    "description": "Durable cargo shorts for outdoor activities.",
+    "price": {
+      "amount": 34.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 8,
+    "title": "Women's High-Waisted Jeans",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Cotton",
+        "Stretch",
+        "Denim"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Light Blue",
+      "Dark Blue",
+      "Black"
+    ],
+    "description": "High-waisted jeans for a trendy look.",
+    "price": {
+      "amount": 39.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 9,
+    "title": "Men's Button-Up Shirt",
+    "optionsSelector": {
+      "name": "Variation",
+      "options": [
+        "Plain",
+        "Checked",
+        "Striped"
+      ]
+    },
+    "optionsSelectorClr": [
+      "White",
+      "Blue",
+      "Gray"
+    ],
+    "description": "A classic button-up shirt for formal and casual settings.",
+    "price": {
+      "amount": 29.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 10,
+    "title": "Women's Long-Sleeve Blouse",
+    "optionsSelector": {
+      "name": "Category",
+      "options": [
+        "Workwear",
+        "Casual",
+        "Evening"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "White",
+      "Blush"
+    ],
+    "description": "An elegant long-sleeve blouse for work or social events.",
+    "price": {
+      "amount": 39.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 11,
+    "title": "Men's Hooded Sweatshirt",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Gray",
+      "Maroon"
+    ],
+    "description": "A comfortable hooded sweatshirt for cooler days.",
+    "price": {
+      "amount": 49.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 12,
+    "title": "Women's A-Line Skirt",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Cotton",
+        "Wool",
+        "Silk"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Navy",
+      "Gray",
+      "Black"
+    ],
+    "description": "An A-line skirt that offers a flattering fit.",
+    "price": {
+      "amount": 29.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 13,
+    "title": "Men's Plaid Shirt",
+    "optionsSelector": {
+      "name": "Variation",
+      "options": [
+        "Plaid",
+        "Checkered",
+        "Solid"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Red",
+      "Green",
+      "Blue"
+    ],
+    "description": "A trendy plaid shirt for casual wear.",
+    "price": {
+      "amount": 24.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 14,
+    "title": "Women's Printed Maxi Dress",
+    "optionsSelector": {
+      "name": "Category",
+      "options": [
+        "Beachwear",
+        "Party",
+        "Casual"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Floral",
+      "Geometric",
+      "Solid"
+    ],
+    "description": "A flowy maxi dress with vibrant prints.",
+    "price": {
+      "amount": 44.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 15,
+    "title": "Men's Athletic Shorts",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Polyester",
+        "Nylon",
+        "Spandex"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Blue",
+      "Gray"
+    ],
+    "description": "Perfect shorts for workouts and sports.",
+    "price": {
+      "amount": 24.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 16,
+    "title": "Women's Cardigan Sweater",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Beige",
+      "Gray",
+      "Black"
+    ],
+    "description": "A cozy cardigan sweater for layering.",
+    "price": {
+      "amount": 39.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 17,
+    "title": "Men's Chino Pants",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "30",
+        "32",
+        "34",
+        "36"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Khaki",
+      "Navy",
+      "Gray"
+    ],
+    "description": "Versatile chinos for both casual and formal wear.",
+    "price": {
+      "amount": 34.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 18,
+    "title": "Women's Peplum Top",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Red",
+      "Blue",
+      "White"
+    ],
+    "description": "A flattering peplum top for a stylish look.",
+    "price": {
+      "amount": 29.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 19,
+    "title": "Men's Crew Neck Sweater",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Charcoal",
+      "Olive"
+    ],
+    "description": "A comfortable crew neck sweater for everyday wear.",
+    "price": {
+      "amount": 49.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 20,
+    "title": "Women's Tunic Top",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Turquoise",
+      "Coral",
+      "Navy"
+    ],
+    "description": "A flowy tunic top for a relaxed fit.",
+    "price": {
+      "amount": 34.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 21,
+    "title": "Men's Polo Shirt",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ]
+    },
+    "optionsSelectorClr": [
+      "White",
+      "Blue",
+      "Gray"
+    ],
+    "description": "A classic polo shirt for casual outings.",
+    "price": {
+      "amount": 25.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 22,
+    "title": "Women's Shift Dress",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Red",
+      "Gray"
+    ],
+    "description": "A chic shift dress for a clean silhouette.",
+    "price": {
+      "amount": 39.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 23,
+    "title": "Men's Sweatpants",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Cotton",
+        "Polyester",
+        "Fleece"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Gray",
+      "Navy"
+    ],
+    "description": "Comfortable sweatpants for lounging or exercise.",
+    "price": {
+      "amount": 29.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 24,
+    "title": "Women's Wrap Dress",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Cotton",
+        "Silk",
+        "Jersey"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Red",
+      "Blue"
+    ],
+    "description": "A versatile wrap dress that can be dressed up or down.",
+    "price": {
+      "amount": 44.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 25,
+    "title": "Men's Denim Jacket",
+    "optionsSelector": {
+      "name": "Variation",
+      "options": [
+        "Light",
+        "Medium",
+        "Dark"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Light Blue",
+      "Dark Blue",
+      "Black"
+    ],
+    "description": "A classic denim jacket for a timeless look.",
+    "price": {
+      "amount": 59.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 26,
+    "title": "Women's Pleated Skirt",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Pink",
+      "Black",
+      "Gray"
+    ],
+    "description": "A stylish pleated skirt for a graceful appearance.",
+    "price": {
+      "amount": 34.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 27,
+    "title": "Men's Lightweight Hoodie",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Cotton",
+        "Polyester",
+        "Blend"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Charcoal",
+      "Navy",
+      "Green"
+    ],
+    "description": "A lightweight hoodie perfect for layering.",
+    "price": {
+      "amount": 39.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 28,
+    "title": "Women's Off-Shoulder Top",
+    "optionsSelector": {
+      "name": "Variation",
+      "options": [
+        "Solid",
+        "Patterned",
+        "Striped"
+      ]
+    },
+    "optionsSelectorClr": [
+      "White",
+      "Blue",
+      "Coral"
+    ],
+    "description": "A trendy off-shoulder top for a chic look.",
+    "price": {
+      "amount": 24.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 29,
+    "title": "Men's Dress Pants",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "30",
+        "32",
+        "34",
+        "36"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Charcoal",
+      "Navy"
+    ],
+    "description": "Elegant dress pants suitable for formal occasions.",
+    "price": {
+      "amount": 49.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 30,
+    "title": "Women's Sweater Dress",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Cream",
+      "Gray",
+      "Black"
+    ],
+    "description": "A cozy sweater dress for a comfortable winter look.",
+    "price": {
+      "amount": 49.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 31,
+    "title": "Men's Relaxed Fit Shirt",
+    "optionsSelector": {
+      "name": "Category",
+      "options": [
+        "Casual",
+        "Formal",
+        "Work"
+      ]
+    },
+    "optionsSelectorClr": [
+      "White",
+      "Light Blue",
+      "Pink"
+    ],
+    "description": "A relaxed fit shirt for versatile wear.",
+    "price": {
+      "amount": 29.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 32,
+    "title": "Women's Midi Dress",
+    "optionsSelector": {
+      "name": "Variation",
+      "options": [
+        "Solid",
+        "Patterned",
+        "Striped"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Red",
+      "Black",
+      "Navy"
+    ],
+    "description": "A midi dress that combines style and comfort.",
+    "price": {
+      "amount": 39.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 33,
+    "title": "Men's Button-Up Flannel",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Flannel",
+        "Cotton",
+        "Blend"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Red",
+      "Black",
+      "Green"
+    ],
+    "description": "A warm flannel shirt for cold weather.",
+    "price": {
+      "amount": 34.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 34,
+    "title": "Women's Trench Coat",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Cotton",
+        "Wool",
+        "Blend"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Beige",
+      "Black",
+      "Gray"
+    ],
+    "description": "A classic trench coat for a sophisticated look.",
+    "price": {
+      "amount": 79.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 35,
+    "title": "Men's Activewear Pants",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Polyester",
+        "Nylon",
+        "Spandex"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Blue",
+      "Gray"
+    ],
+    "description": "Activewear pants designed for performance and comfort.",
+    "price": {
+      "amount": 39.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 36,
+    "title": "Women's Blouse",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Pink",
+      "White",
+      "Blue"
+    ],
+    "description": "A stylish blouse suitable for both casual and formal settings.",
+    "price": {
+      "amount": 24.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 37,
+    "title": "Men's Cargo Shorts",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "30",
+        "32",
+        "34",
+        "36"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Khaki",
+      "Olive",
+      "Black"
+    ],
+    "description": "Practical cargo shorts with multiple pockets.",
+    "price": {
+      "amount": 29.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 38,
+    "title": "Women's A-Line Skirt",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Navy",
+      "Green",
+      "Black"
+    ],
+    "description": "A flattering A-line skirt for various occasions.",
+    "price": {
+      "amount": 29.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 39,
+    "title": "Men's Henley Shirt",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Cotton",
+        "Blend",
+        "Wool"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Gray",
+      "Black",
+      "Navy"
+    ],
+    "description": "A casual Henley shirt with a comfortable fit.",
+    "price": {
+      "amount": 34.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 40,
+    "title": "Women's Cardigan",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Wool",
+        "Cotton",
+        "Acrylic"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Beige",
+      "Brown",
+      "Gray"
+    ],
+    "description": "A cozy cardigan for layering.",
+    "price": {
+      "amount": 39.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 41,
+    "title": "Men's Lightweight Jacket",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Nylon",
+        "Polyester",
+        "Cotton"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Green",
+      "Blue",
+      "Black"
+    ],
+    "description": "A versatile lightweight jacket for various weather conditions.",
+    "price": {
+      "amount": 54.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 42,
+    "title": "Women's Wrap Top",
+    "optionsSelector": {
+      "name": "Variation",
+      "options": [
+        "Solid",
+        "Patterned",
+        "Striped"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Purple",
+      "Red",
+      "Black"
+    ],
+    "description": "A stylish wrap top that adds a touch of elegance.",
+    "price": {
+      "amount": 29.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 43,
+    "title": "Men's Bomber Jacket",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Leather",
+        "Nylon",
+        "Polyester"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Brown",
+      "Black",
+      "Olive"
+    ],
+    "description": "A rugged bomber jacket for a bold style.",
+    "price": {
+      "amount": 89.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 44,
+    "title": "Women's Jumpsuit",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Blue",
+      "Red"
+    ],
+    "description": "A versatile jumpsuit for various occasions.",
+    "price": {
+      "amount": 59.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 45,
+    "title": "Men's Casual Shorts",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "30",
+        "32",
+        "34",
+        "36"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Beige",
+      "Navy",
+      "Black"
+    ],
+    "description": "Casual shorts for relaxed summer days.",
+    "price": {
+      "amount": 24.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 46,
+    "title": "Women's Long Sleeve Top",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Cotton",
+        "Polyester",
+        "Blended"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Gray",
+      "White"
+    ],
+    "description": "A long sleeve top for cooler weather.",
+    "price": {
+      "amount": 34.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 47,
+    "title": "Men's Cargo Pants",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Cotton",
+        "Polyester",
+        "Nylon"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Khaki",
+      "Olive",
+      "Black"
+    ],
+    "description": "Durable cargo pants with multiple pockets.",
+    "price": {
+      "amount": 39.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 48,
+    "title": "Women's Romper",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Blue",
+      "Black",
+      "Gray"
+    ],
+    "description": "A playful romper for a casual look.",
+    "price": {
+      "amount": 39.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 49,
+    "title": "Men's V-Neck T-Shirt",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "White",
+      "Gray"
+    ],
+    "description": "A comfortable V-neck t-shirt for everyday wear.",
+    "price": {
+      "amount": 19.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 50,
+    "title": "Women's Off-Shoulder Dress",
+    "optionsSelector": {
+      "name": "Variation",
+      "options": [
+        "Solid",
+        "Patterned",
+        "Floral"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Red",
+      "Pink"
+    ],
+    "description": "An elegant off-shoulder dress for special occasions.",
+    "price": {
+      "amount": 49.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 51,
+    "title": "Men's Dress Shirt",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    "optionsSelectorClr": [
+      "White",
+      "Light Blue",
+      "Gray"
+    ],
+    "description": "A formal dress shirt suitable for office wear.",
+    "price": {
+      "amount": 39.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 52,
+    "title": "Women's Skater Dress",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "XS",
+        "S",
+        "M",
+        "L"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Pink",
+      "Black",
+      "Navy"
+    ],
+    "description": "A skater dress with a flattering fit and flare silhouette.",
+    "price": {
+      "amount": 44.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 53,
+    "title": "Men's Henley Sweatshirt",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Cotton",
+        "Polyester",
+        "Blend"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Charcoal",
+      "Navy",
+      "Olive"
+    ],
+    "description": "A cozy Henley sweatshirt for colder days.",
+    "price": {
+      "amount": 39.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 54,
+    "title": "Women's Button-Down Shirt",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    "optionsSelectorClr": [
+      "White",
+      "Blue",
+      "Gray"
+    ],
+    "description": "A classic button-down shirt for versatile styling.",
+    "price": {
+      "amount": 29.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 55,
+    "title": "Men's Chinos",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "30",
+        "32",
+        "34",
+        "36"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Beige",
+      "Navy",
+      "Olive"
+    ],
+    "description": "Stylish chinos that work well for both casual and formal settings.",
+    "price": {
+      "amount": 34.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 56,
+    "title": "Women's Long Sleeve Dress",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Gray",
+      "Red"
+    ],
+    "description": "A long sleeve dress for cooler weather.",
+    "price": {
+      "amount": 49.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 57,
+    "title": "Men's Polo Jacket",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Polyester",
+        "Nylon",
+        "Fleece"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Gray",
+      "Blue"
+    ],
+    "description": "A sleek polo jacket for casual and semi-formal occasions.",
+    "price": {
+      "amount": 69.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  },
+  {
+    "itemId": 58,
+    "title": "Women's Off-Shoulder Sweater",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Cotton",
+        "Wool",
+        "Blended"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Cream",
+      "Gray",
+      "Pink"
+    ],
+    "description": "A cozy off-shoulder sweater for a relaxed style.",
+    "price": {
+      "amount": 34.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/women1.webp",
+    "imagesList": [
+      "/women1.webp",
+      "/women2.jpg",
+      "/women3.jpg",
+      "/women4.jpg"
+    ]
+  },
+  {
+    "itemId": 59,
+    "title": "Men's Casual Jacket",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Denim",
+        "Cotton",
+        "Polyester"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Blue",
+      "Black",
+      "Gray"
+    ],
+    "description": "A casual jacket suitable for everyday wear.",
+    "price": {
+      "amount": 49.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/kids1.webp",
+    "imagesList": [
+      "/kids1.webp",
+      "/kids2.jpg",
+      "/kids3.jpg",
+      "/kids4.jpg"
+    ]
+  },
+  {
+    "itemId": 60,
+    "title": "Women's Wide-Leg Pants",
+    "optionsSelector": {
+      "name": "Size",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Black",
+      "Beige",
+      "Navy"
+    ],
+    "description": "Flowy wide-leg pants for a chic and comfortable fit.",
+    "price": {
+      "amount": 39.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/shoe1.jpg",
+    "imagesList": [
+      "/shoe1.jpg",
+      "/shoe2.jpg",
+      "/shoe3.webp",
+      "/shoe4.webp"
+    ]
+  },
+  {
+    "itemId": 61,
+    "title": "Men's Trench Coat",
+    "optionsSelector": {
+      "name": "Material",
+      "options": [
+        "Cotton",
+        "Wool",
+        "Blend"
+      ]
+    },
+    "optionsSelectorClr": [
+      "Beige",
+      "Black",
+      "Gray"
+    ],
+    "description": "A classic trench coat for a polished appearance.",
+    "price": {
+      "amount": 89.99,
+      "currency": "USD"
+    },
+    "imgUrl": "/men1.jpeg",
+    "imagesList": [
+      "/men1.jpeg",
+      "/men2.webp",
+      "/men3.webp",
+      "/men4.webp"
+    ]
+  }
+]

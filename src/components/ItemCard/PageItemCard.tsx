@@ -13,16 +13,9 @@ export const PageItemCard: React.FC<ComponentProps<"div"> & PageItemCardProps> =
 
 	const { addItem } = useCartContext();
 	const [imgSrc, setImgSrc] = useState<number>(0);
-	const [imgsSrcs, _] = useState<string[]>([
-		"/head_phone_black.jpg",
-		"/head_phone_red.jpg",
-		"/head_phone_white.jpg",
-		"/head_phone_gold.jpg",
-	])
+	const [imgsSrcs, _] = useState<string[]>(item.imagesList)
 	const [options, setOptions] = useState<string[]>([]);
 	const [optionsClr, setOptionsClr] = useState<string[]>([]);
-	console.log(options)
-	console.log(optionsClr)
 	return (
 		<div className="page-item-card-container" {...props}>
 			<div className="page-item-card-title">

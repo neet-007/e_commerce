@@ -35,7 +35,6 @@ function ClothingPage() {
     )
   }
 
-  console.log(data)
   return (
     <div>
       <ItemsMain data={data} />

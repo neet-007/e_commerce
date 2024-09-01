@@ -11,7 +11,6 @@ export const Cart: React.FC<ComponentProps<"div"> & CartProps> = ({ ...props }) 
 
   const { count, total, cartItems } = useCartContext();
 
-  console.log(cartItems);
   return (
     <div className="cart-container" {...props}>
       <div className="cart-bag">

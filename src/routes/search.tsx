@@ -35,7 +35,6 @@ function SearchPage() {
       </div>
     )
   }
-  console.log(data)
   return (
     <div className="flex f-d-column gap-2">
       <ItemsMain data={data} />

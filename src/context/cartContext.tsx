@@ -74,7 +74,6 @@ export const CartContextProvider: React.FC<React.ComponentProps<"div">> = ({ chi
     const prevCart_ = getCart();
     let total_ = 0;
     let count_ = 0;
-    console.log(prevCart_)
     if (prevCart) {
       total_ = prevCart_.reduce((prev: number, curr: CartItemType) => {
         return parseFloat((prev + curr.price).toFixed(2));

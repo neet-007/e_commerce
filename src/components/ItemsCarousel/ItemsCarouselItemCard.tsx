@@ -13,7 +13,7 @@ export const ItemsCarouselItemCard: React.FC<ComponentProps<"div"> & ItemsCarous
 	return (
 		<div className="items-carousel-item-card-container" {...props}>
 			<img className="items-carousel-item-card-img"
-				src="/head_phone_black.jpg" alt=""
+				src={item.imgUrl} alt=""
 				onClick={() => navigate({
 					to: "/men/$productId",
 					params: { productId: String(item.itemId) }

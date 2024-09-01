@@ -10,23 +10,35 @@ export async function fetchProduct(
 ): Promise<ReturnType> {
 	let data: ApiResponse | null = null;
 
+	let res;
+
 	switch (category) {
 		case "men":
-			data = (await import(`../api/menProducts.json`)).default;
+			res = (await fetch("/menProducts.json"));
 			break;
 		case "women":
-			data = (await import(`../api/womenProducts.json`)).default;
+			res = (await fetch("/womenProducts.json"));
 			break;
 		case "kids":
-			data = (await import(`../api/kidsProducts.json`)).default;
+			res = (await fetch("/kidsProducts.json"));
 			break;
 		case "technology":
-			data = (await import(`../api/technologyProducts.json`)).default;
+			res = (await fetch("/technologyProducts.json"));
 			break;
 		default:
 			throw new Error(`Unknown category: ${category}`);
 	}
 
+	if (res.status > 299) {
+		const error = await res.json();
+		throw Error(error)
+	}
+
+	data = await res.json()
+
+	if (!data) {
+		throw Error("counld not fetch")
+	}
 
 	const item = data.filter(s => s.itemId === id)
 	if (item.length === 0) {

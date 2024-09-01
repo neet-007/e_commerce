@@ -7,7 +7,17 @@ type ReturnType = { carousel1: ItemType[], carousel2: ItemType[], carousel3: Ite
 export async function fetchHomepage(): Promise<ReturnType> {
 	let data: ApiResponse | null = null;
 
-	data = (await import(`../api/menProducts.json`)).default;
+	let res = (await fetch("/menProducts.json"));
+
+	if (res.status > 299) {
+		throw Error("error")
+	}
+
+	data = await res.json();
+
+	if (!data) {
+		throw Error("error")
+	}
 
 	const carousel1 = data.slice(0, 6);
 

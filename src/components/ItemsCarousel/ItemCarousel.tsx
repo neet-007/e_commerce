@@ -12,7 +12,6 @@ export const ItemsCarousel: React.FC<ComponentProps<"div"> & ItemsCarouselProps>
 	items, ...props }) => {
 	const [sliderIndex, setSliderIndex] = useState<number>(1);
 	const containerRef = useRef<HTMLDivElement>(null);
-	console.log()
 	function move(dir: "l" | "r") {
 		if (!containerRef.current) {
 			return;

@@ -1,0 +1,594 @@
+[
+  {
+    "itemId": 101,
+    "title": "Smartphone Pro X",
+    "optionsSelector": ["128GB", "256GB", "512GB"],
+    "optionsSelectorClr": ["Black", "Silver", "Blue"],
+    "description": "High-end smartphone with an advanced camera system.",
+    "price": { "amount": 999.99, "currency": "USD" }
+  },
+  {
+    "itemId": 102,
+    "title": "Laptop UltraBook",
+    "optionsSelector": ["8GB RAM", "16GB RAM", "32GB RAM"],
+    "optionsSelectorClr": ["Space Grey", "Silver"],
+    "description": "Sleek ultrabook with powerful performance and long battery life.",
+    "price": { "amount": 1399.99, "currency": "USD" }
+  },
+  {
+    "itemId": 103,
+    "title": "Wireless Earbuds",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["White", "Black"],
+    "description": "Compact wireless earbuds with noise cancellation.",
+    "price": { "amount": 199.99, "currency": "USD" }
+  },
+  {
+    "itemId": 104,
+    "title": "Smartwatch Series 5",
+    "optionsSelector": ["40mm", "44mm"],
+    "optionsSelectorClr": ["Black", "Gold", "Silver"],
+    "description": "Feature-packed smartwatch with fitness tracking and GPS.",
+    "price": { "amount": 399.99, "currency": "USD" }
+  },
+  {
+    "itemId": 105,
+    "title": "4K Ultra HD TV",
+    "optionsSelector": ["43 inch", "55 inch", "65 inch"],
+    "optionsSelectorClr": ["Black", "Silver"],
+    "description": "Stunning 4K Ultra HD television with smart features.",
+    "price": { "amount": 599.99, "currency": "USD" }
+  },
+  {
+    "itemId": 106,
+    "title": "Gaming Console X",
+    "optionsSelector": ["1TB", "2TB"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Next-gen gaming console with high performance and fast loading times.",
+    "price": { "amount": 499.99, "currency": "USD" }
+  },
+  {
+    "itemId": 107,
+    "title": "Bluetooth Speaker",
+    "optionsSelector": ["Standard", "Mini"],
+    "optionsSelectorClr": ["Black", "Blue", "Red"],
+    "description": "Portable Bluetooth speaker with excellent sound quality.",
+    "price": { "amount": 99.99, "currency": "USD" }
+  },
+  {
+    "itemId": 108,
+    "title": "Wireless Mouse",
+    "optionsSelector": ["Standard", "Ergonomic"],
+    "optionsSelectorClr": ["Black", "White", "Grey"],
+    "description": "Responsive wireless mouse with customizable buttons.",
+    "price": { "amount": 49.99, "currency": "USD" }
+  },
+  {
+    "itemId": 109,
+    "title": "Mechanical Keyboard",
+    "optionsSelector": ["Blue Switches", "Red Switches", "Brown Switches"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Durable mechanical keyboard with customizable RGB lighting.",
+    "price": { "amount": 129.99, "currency": "USD" }
+  },
+  {
+    "itemId": 110,
+    "title": "Noise Cancelling Headphones",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "Silver", "Blue"],
+    "description": "Premium over-ear headphones with active noise cancellation.",
+    "price": { "amount": 299.99, "currency": "USD" }
+  },
+  {
+    "itemId": 111,
+    "title": "Smart Home Hub",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["White", "Black"],
+    "description": "Control your smart home devices from one central hub.",
+    "price": { "amount": 149.99, "currency": "USD" }
+  },
+  {
+    "itemId": 112,
+    "title": "External Hard Drive",
+    "optionsSelector": ["1TB", "2TB", "4TB"],
+    "optionsSelectorClr": ["Black", "Blue", "Red"],
+    "description": "High-capacity external hard drive with fast data transfer speeds.",
+    "price": { "amount": 89.99, "currency": "USD" }
+  },
+  {
+    "itemId": 113,
+    "title": "Smart Thermostat",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["White", "Black"],
+    "description": "Smart thermostat with energy-saving features.",
+    "price": { "amount": 199.99, "currency": "USD" }
+  },
+  {
+    "itemId": 114,
+    "title": "Drone with Camera",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "High-performance drone with 4K camera and GPS.",
+    "price": { "amount": 499.99, "currency": "USD" }
+  },
+  {
+    "itemId": 115,
+    "title": "Smart Doorbell",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "Silver"],
+    "description": "Smart doorbell with HD video and motion detection.",
+    "price": { "amount": 149.99, "currency": "USD" }
+  },
+  {
+    "itemId": 116,
+    "title": "Wireless Charging Pad",
+    "optionsSelector": ["Single", "Dual"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Convenient wireless charging pad for multiple devices.",
+    "price": { "amount": 49.99, "currency": "USD" }
+  },
+  {
+    "itemId": 101,
+    "title": "Smartphone Pro X",
+    "optionsSelector": ["128GB", "256GB", "512GB"],
+    "optionsSelectorClr": ["Black", "Silver", "Blue"],
+    "description": "High-end smartphone with an advanced camera system.",
+    "price": { "amount": 999.99, "currency": "USD" }
+  },
+  {
+    "itemId": 102,
+    "title": "Laptop UltraBook",
+    "optionsSelector": ["8GB RAM", "16GB RAM", "32GB RAM"],
+    "optionsSelectorClr": ["Space Grey", "Silver"],
+    "description": "Sleek ultrabook with powerful performance and long battery life.",
+    "price": { "amount": 1399.99, "currency": "USD" }
+  },
+  {
+    "itemId": 103,
+    "title": "Wireless Earbuds",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["White", "Black"],
+    "description": "Compact wireless earbuds with noise cancellation.",
+    "price": { "amount": 199.99, "currency": "USD" }
+  },
+  {
+    "itemId": 104,
+    "title": "Smartwatch Series 5",
+    "optionsSelector": ["40mm", "44mm"],
+    "optionsSelectorClr": ["Black", "Gold", "Silver"],
+    "description": "Feature-packed smartwatch with fitness tracking and GPS.",
+    "price": { "amount": 399.99, "currency": "USD" }
+  },
+  {
+    "itemId": 105,
+    "title": "4K Ultra HD TV",
+    "optionsSelector": ["43 inch", "55 inch", "65 inch"],
+    "optionsSelectorClr": ["Black", "Silver"],
+    "description": "Stunning 4K Ultra HD television with smart features.",
+    "price": { "amount": 599.99, "currency": "USD" }
+  },
+  {
+    "itemId": 106,
+    "title": "Gaming Console X",
+    "optionsSelector": ["1TB", "2TB"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Next-gen gaming console with high performance and fast loading times.",
+    "price": { "amount": 499.99, "currency": "USD" }
+  },
+  {
+    "itemId": 107,
+    "title": "Bluetooth Speaker",
+    "optionsSelector": ["Standard", "Mini"],
+    "optionsSelectorClr": ["Black", "Blue", "Red"],
+    "description": "Portable Bluetooth speaker with excellent sound quality.",
+    "price": { "amount": 99.99, "currency": "USD" }
+  },
+  {
+    "itemId": 108,
+    "title": "Wireless Mouse",
+    "optionsSelector": ["Standard", "Ergonomic"],
+    "optionsSelectorClr": ["Black", "White", "Grey"],
+    "description": "Responsive wireless mouse with customizable buttons.",
+    "price": { "amount": 49.99, "currency": "USD" }
+  },
+  {
+    "itemId": 109,
+    "title": "Mechanical Keyboard",
+    "optionsSelector": ["Blue Switches", "Red Switches", "Brown Switches"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Durable mechanical keyboard with customizable RGB lighting.",
+    "price": { "amount": 129.99, "currency": "USD" }
+  },
+  {
+    "itemId": 110,
+    "title": "Noise Cancelling Headphones",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "Silver", "Blue"],
+    "description": "Premium over-ear headphones with active noise cancellation.",
+    "price": { "amount": 299.99, "currency": "USD" }
+  },
+  {
+    "itemId": 111,
+    "title": "Smart Home Hub",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["White", "Black"],
+    "description": "Control your smart home devices from one central hub.",
+    "price": { "amount": 149.99, "currency": "USD" }
+  },
+  {
+    "itemId": 112,
+    "title": "External Hard Drive",
+    "optionsSelector": ["1TB", "2TB", "4TB"],
+    "optionsSelectorClr": ["Black", "Blue", "Red"],
+    "description": "High-capacity external hard drive with fast data transfer speeds.",
+    "price": { "amount": 89.99, "currency": "USD" }
+  },
+  {
+    "itemId": 113,
+    "title": "Smart Thermostat",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["White", "Black"],
+    "description": "Smart thermostat with energy-saving features.",
+    "price": { "amount": 199.99, "currency": "USD" }
+  },
+  {
+    "itemId": 114,
+    "title": "Drone with Camera",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "High-performance drone with 4K camera and GPS.",
+    "price": { "amount": 499.99, "currency": "USD" }
+  },
+  {
+    "itemId": 115,
+    "title": "Smart Doorbell",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "Silver"],
+    "description": "Smart doorbell with HD video and motion detection.",
+    "price": { "amount": 149.99, "currency": "USD" }
+  },
+  {
+    "itemId": 116,
+    "title": "Wireless Charging Pad",
+    "optionsSelector": ["Single", "Dual"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Convenient wireless charging pad for multiple devices.",
+    "price": { "amount": 49.99, "currency": "USD" }
+  },
+  {
+    "itemId": 117,
+    "title": "Tablet Pro Max",
+    "optionsSelector": ["64GB", "128GB", "256GB"],
+    "optionsSelectorClr": ["Silver", "Space Grey"],
+    "description": "High-performance tablet with a stunning display.",
+    "price": { "amount": 799.99, "currency": "USD" }
+  },
+  {
+    "itemId": 118,
+    "title": "VR Headset",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Immersive virtual reality headset with advanced tracking.",
+    "price": { "amount": 399.99, "currency": "USD" }
+  },
+  {
+    "itemId": 119,
+    "title": "Smart Light Bulb",
+    "optionsSelector": ["Standard", "Color"],
+    "optionsSelectorClr": ["White", "Multi-color"],
+    "description": "Energy-efficient smart bulb with app control.",
+    "price": { "amount": 29.99, "currency": "USD" }
+  },
+  {
+    "itemId": 120,
+    "title": "Portable SSD",
+    "optionsSelector": ["500GB", "1TB", "2TB"],
+    "optionsSelectorClr": ["Black", "Blue", "Red"],
+    "description": "Fast portable SSD with rugged durability.",
+    "price": { "amount": 149.99, "currency": "USD" }
+  },
+  {
+    "itemId": 121,
+    "title": "E-Reader",
+    "optionsSelector": ["8GB", "32GB"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Lightweight e-reader with adjustable front light.",
+    "price": { "amount": 129.99, "currency": "USD" }
+  },
+  {
+    "itemId": 122,
+    "title": "Smart Security Camera",
+    "optionsSelector": ["Indoor", "Outdoor"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Smart security camera with motion detection and night vision.",
+    "price": { "amount": 99.99, "currency": "USD" }
+  },
+  {
+    "itemId": 123,
+    "title": "Portable Projector",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Compact portable projector with HD resolution.",
+    "price": { "amount": 299.99, "currency": "USD" }
+  },
+  {
+    "itemId": 124,
+    "title": "Action Camera",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Durable action camera with 4K recording capability.",
+    "price": { "amount": 249.99, "currency": "USD" }
+  },
+  {
+    "itemId": 125,
+    "title": "Smart Outlet",
+    "optionsSelector": ["Single", "Dual"],
+    "optionsSelectorClr": ["White", "Black"],
+    "description": "Smart outlet with voice control and energy monitoring.",
+    "price": { "amount": 39.99, "currency": "USD" }
+  },
+  {
+    "itemId": 126,
+    "title": "Gaming Headset",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White", "Red"],
+    "description": "Comfortable gaming headset with surround sound.",
+    "price": { "amount": 79.99, "currency": "USD" }
+  },
+  {
+    "itemId": 127,
+    "title": "Robot Vacuum Cleaner",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Automated robot vacuum cleaner with smart navigation.",
+    "price": { "amount": 399.99, "currency": "USD" }
+  },
+  {
+    "itemId": 128,
+    "title": "Fitness Tracker",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "Silver", "Rose Gold"],
+    "description": "Wearable fitness tracker with heart rate monitoring.",
+    "price": { "amount": 99.99, "currency": "USD" }
+  },
+  {
+    "itemId": 129,
+    "title": "Bluetooth Tracker",
+    "optionsSelector": ["Single", "Multi-pack"],
+    "optionsSelectorClr": ["Black", "White", "Blue"],
+    "description": "Compact Bluetooth tracker for finding lost items.",
+    "price": { "amount": 29.99, "currency": "USD" }
+  },
+  {
+    "itemId": 130,
+    "title": "Smart Scale",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Smart scale with body composition analysis.",
+    "price": { "amount": 59.99, "currency": "USD" }
+  },
+  {
+    "itemId": 131,
+    "title": "Home Security System",
+    "optionsSelector": ["Starter Kit", "Pro Kit"],
+    "optionsSelectorClr": ["White", "Black"],
+    "description": "Comprehensive home security system with app control.",
+    "price": { "amount": 299.99, "currency": "USD" }
+  },
+  {
+    "itemId": 132,
+    "title": "Wireless Router",
+    "optionsSelector": ["Standard", "Mesh"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "High-speed wireless router with extensive range.",
+    "price": { "amount": 149.99, "currency": "USD" }
+  },
+  {
+    "itemId": 133,
+    "title": "Smart Oven",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "Silver"],
+    "description": "Smart oven with multiple cooking modes and app control.",
+    "price": { "amount": 499.99, "currency": "USD" }
+  },
+  {
+    "itemId": 134,
+    "title": "Portable Power Bank",
+    "optionsSelector": ["10000mAh", "20000mAh"],
+    "optionsSelectorClr": ["Black", "Blue", "Red"],
+    "description": "Compact power bank for charging devices on the go.",
+    "price": { "amount": 49.99, "currency": "USD" }
+  },
+  {
+    "itemId": 135,
+    "title": "Bluetooth Car Adapter",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Bluetooth adapter for hands-free calling and music streaming in your car.",
+    "price": { "amount": 29.99, "currency": "USD" }
+  },
+  {
+    "itemId": 136,
+    "title": "Dash Cam",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "Grey"],
+    "description": "High-definition dash cam with loop recording.",
+    "price": { "amount": 99.99, "currency": "USD" }
+  },
+  {
+    "itemId": 137,
+    "title": "Electric Scooter",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Eco-friendly electric scooter with long battery life.",
+    "price": { "amount": 599.99, "currency": "USD" }
+  },
+  {
+    "itemId": 138,
+    "title": "Smart Refrigerator",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "Silver"],
+    "description": "Smart refrigerator with built-in screen and app control.",
+    "price": { "amount": 1999.99, "currency": "USD" }
+  },
+  {
+    "itemId": 139,
+    "title": "Smart Coffee Maker",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Smart coffee maker with voice control and app integration.",
+    "price": { "amount": 149.99, "currency": "USD" }
+  },
+  {
+    "itemId": 140,
+    "title": "Smart Washing Machine",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["White", "Silver"],
+    "description": "Smart washing machine with multiple wash programs and app control.",
+    "price": { "amount": 799.99, "currency": "USD" }
+  },
+  {
+    "itemId": 141,
+    "title": "Smart Air Purifier",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["White", "Black"],
+    "description": "Smart air purifier with real-time air quality monitoring.",
+    "price": { "amount": 199.99, "currency": "USD" }
+  },
+  {
+    "itemId": 142,
+    "title": "Home Assistant Speaker",
+    "optionsSelector": ["Standard", "Mini"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Smart speaker with voice assistant and high-quality sound.",
+    "price": { "amount": 99.99, "currency": "USD" }
+  },
+  {
+    "itemId": 143,
+    "title": "Electric Toothbrush",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Electric toothbrush with smart timer and pressure sensor.",
+    "price": { "amount": 59.99, "currency": "USD" }
+  },
+  {
+    "itemId": 144,
+    "title": "Smart Light Strip",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["White", "Multi-color"],
+    "description": "Flexible smart light strip with customizable colors.",
+    "price": { "amount": 49.99, "currency": "USD" }
+  },
+  {
+    "itemId": 145,
+    "title": "Robot Lawn Mower",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Green", "Black"],
+    "description": "Automated robot lawn mower with smart navigation.",
+    "price": { "amount": 999.99, "currency": "USD" }
+  },
+  {
+    "itemId": 146,
+    "title": "Portable Air Conditioner",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["White", "Black"],
+    "description": "Portable air conditioner with smart control and energy efficiency.",
+    "price": { "amount": 349.99, "currency": "USD" }
+  },
+  {
+    "itemId": 147,
+    "title": "3D Printer",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "3D printer with high precision and multiple filament options.",
+    "price": { "amount": 799.99, "currency": "USD" }
+  },
+  {
+    "itemId": 148,
+    "title": "Smart Blinds",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["White", "Grey"],
+    "description": "Smart blinds with app control and voice integration.",
+    "price": { "amount": 299.99, "currency": "USD" }
+  },
+  {
+    "itemId": 149,
+    "title": "Electric Bike",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White", "Blue"],
+    "description": "Eco-friendly electric bike with pedal assist and long range.",
+    "price": { "amount": 1499.99, "currency": "USD" }
+  },
+  {
+    "itemId": 150,
+    "title": "Portable Bluetooth Keyboard",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White", "Grey"],
+    "description": "Compact Bluetooth keyboard with long battery life.",
+    "price": { "amount": 69.99, "currency": "USD" }
+  },
+  {
+    "itemId": 151,
+    "title": "Smart Garden",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Indoor smart garden with automated watering and lighting.",
+    "price": { "amount": 249.99, "currency": "USD" }
+  },
+  {
+    "itemId": 152,
+    "title": "Smart Thermostat",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["White", "Black"],
+    "description": "Smart thermostat with learning capabilities and app control.",
+    "price": { "amount": 199.99, "currency": "USD" }
+  },
+  {
+    "itemId": 153,
+    "title": "Smart Lock",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "Silver"],
+    "description": "Smart lock with keyless entry and remote access.",
+    "price": { "amount": 249.99, "currency": "USD" }
+  },
+  {
+    "itemId": 154,
+    "title": "Smart Light Bulb",
+    "optionsSelector": ["Single", "Multi-pack"],
+    "optionsSelectorClr": ["White", "Multi-color"],
+    "description": "Energy-efficient smart light bulb with app control.",
+    "price": { "amount": 24.99, "currency": "USD" }
+  },
+  {
+    "itemId": 155,
+    "title": "Wireless Charging Pad",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Wireless charging pad with fast charge support.",
+    "price": { "amount": 39.99, "currency": "USD" }
+  },
+  {
+    "itemId": 156,
+    "title": "Portable SSD",
+    "optionsSelector": ["256GB", "512GB", "1TB"],
+    "optionsSelectorClr": ["Black", "Silver", "Blue"],
+    "description": "Portable SSD with high-speed data transfer.",
+    "price": { "amount": 129.99, "currency": "USD" }
+  },
+  {
+    "itemId": 157,
+    "title": "Action Camera",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "White"],
+    "description": "Rugged action camera with 4K recording and waterproof design.",
+    "price": { "amount": 299.99, "currency": "USD" }
+  },
+  {
+    "itemId": 158,
+    "title": "Smart Doorbell",
+    "optionsSelector": ["Standard", "Pro"],
+    "optionsSelectorClr": ["Black", "Silver"],
+    "description": "Smart doorbell with video recording and app notifications.",
+    "price": { "amount": 199.99, "currency": "USD" }
+  },
+]

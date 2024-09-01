@@ -16,7 +16,7 @@ export const CartItemCard: React.FC<ComponentProps<"div"> & CartItemCardProps> =
 
   return (
     <div className="cart-card-item-container" {...props}>
-      <img className="cart-card-item-img" src="/head_phone_black.jpg"
+      <img className="cart-card-item-img" src={item.item.imgUrl}
         onClick={() => navigate({
           to: `/men/$productId`,
           params: { productId: String(item.item.itemId) }

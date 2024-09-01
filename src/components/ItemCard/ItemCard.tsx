@@ -9,6 +9,8 @@ export type ItemType = {
 	optionsSelectorClr: string[];
 	description: string
 	price: { amount: number, currency: string }
+	imgUrl: string,
+	imagesList: string[]
 }
 
 export type ItemCardProps = {
@@ -26,9 +28,11 @@ export const ItemCard: React.FC<ComponentProps<"div"> & ItemCardProps> = ({
 			<div className="item-card-title">
 				{item.title}
 			</div>
-			<img className="item-card-img" src="/head_phone_black.jpg"
+			<img className="item-card-img" src={item.imgUrl}
 				onClick={() => naivate({
-					to: `${location.pathname.replace("/clothing", "")}/$productId`,
+					to: `${location.pathname.includes("search") ?
+						"/men"
+						: location.pathname.replace("/clothing", "")}/$productId`,
 					params: { productId: String(item.itemId) }
 				})}
 			/>

@@ -18,8 +18,17 @@ export async function fetchSearch(
 ): Promise<ReturnType> {
 	let data: ItemType[];
 
-	data = (await import("../api/menProducts.json")).default;
+	let res = (await fetch("/menProducts.json"));
 
+	if (res.status > 299) {
+		throw Error("error")
+	}
+
+	data = await res.json();
+
+	if (!data) {
+		throw Error("error")
+	}
 
 	if (searchParams && Object.keys(searchParams).length) {
 		const filteredResults = [] as ItemType[];
